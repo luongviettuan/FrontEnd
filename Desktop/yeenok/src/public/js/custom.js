@@ -1,3 +1,4 @@
+import $ from 'jquery';
 $(function() {
 "use strict";
  /*  =====  On responsive swatch left to right colunm  =====  */

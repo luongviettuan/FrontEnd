@@ -46,21 +46,7 @@ export default class Home extends Component{
                                     </div>
                                     <div className="col-xs-12 col-sm-8">
                                         <ul className="header-top-right text-right">
-                                            <li className="account"><a href="login.html">My Account</a></li>
-                                            <li className="language dropdown"> <span className="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Language <span className="caret"></span> </span>
-                                                <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#">English</a></li>
-                                                    <li><a href="#">French</a></li>
-                                                    <li><a href="#">German</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="currency dropdown"> <span className="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Currency <span className="caret"></span> </span>
-                                                <ul className="dropdown-menu" aria-labelledby="dropdownMenu12">
-                                                    <li><a href="#">€ Euro</a></li>
-                                                    <li><a href="#">£ Pound Sterling</a></li>
-                                                    <li><a href="#">$ US Dollar</a></li>
-                                                </ul>
-                                            </li>
+                                            <li className="account"><a href="login.html">My Account</a></li> 
                                         </ul>
                                     </div>
                                 </div>
@@ -314,10 +300,9 @@ export default class Home extends Component{
                                         <li><a href="#Featured" data-toggle="tab">Featured</a> </li>
                                     </ul>
                                     <div className="tab-content clearfix box">
-                                        <div className="tab-pane active" id="nArrivals">
-                                            <div className="nArrivals owl-carousel">
-                                                <div className="product-grid">
-                                                    <div className="item">
+                                        <div className="tab-pane active" id="nArrivals">                                    
+                                            <div className="product-grid">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product9.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product9-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -337,8 +322,8 @@ export default class Home extends Component{
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="product-grid">
-                                                    <div className="item">
+                                            <div className="product-grid">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product1-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -357,51 +342,9 @@ export default class Home extends Component{
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className="product-grid">
-                                                    <div className="item">
-                                                        <div className="product-thumb">
-                                                            <div className="image product-imageblock">
-                                                                <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product3.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product3-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                                <div className="button-group text-center">
-                                                                    <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                    <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                    <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                    <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="caption product-detail text-center">
-                                                                <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                                <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                                <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-grid">
-                                                    <div className="item">
-                                                        <div className="product-thumb"></div>
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product5.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product5-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                </div>        
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product7.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product7-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -422,7 +365,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product9.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product9-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -442,12 +385,97 @@ export default class Home extends Component{
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className="product-grid">
+                                                    <div className="col-sm-3 item">
+                                                        <div className="product-thumb">
+                                                            <div className="image product-imageblock">
+                                                                <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product9.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product9-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
+                                                                <div className="button-group text-center">
+                                                                    <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
+                                                                    <div className="quickview"><a href="#"><span>Quick View</span></a></div>
+                                                                    <div className="compare"><a href="#"><span>Compare</span></a></div>
+                                                                    <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="caption product-detail text-center">
+                                                                <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
+                                                                <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
+                                                                <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div className="product-grid">
+                                                    <div className="col-sm-3 item">
+                                                        <div className="product-thumb">
+                                                            <div className="image product-imageblock">
+                                                                <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product1-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
+                                                                <div className="button-group text-center">
+                                                                    <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
+                                                                    <div className="quickview"><a href="#"><span>Quick View</span></a></div>
+                                                                    <div className="compare"><a href="#"><span>Compare</span></a></div>
+                                                                    <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="caption product-detail text-center">
+                                                                <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
+                                                                <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
+                                                                <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>        
+                                            <div className="product-grid">
+                                                <div className="col-sm-3 item">
+                                                    <div className="product-thumb  mb_30">
+                                                        <div className="image product-imageblock">
+                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product7.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product7-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
+                                                            <div className="button-group text-center">
+                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
+                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
+                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
+                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="caption product-detail text-center">
+                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
+                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
+                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="product-grid">
+                                                <div className="col-sm-3 item">
+                                                    <div className="product-thumb  mb_30">
+                                                        <div className="image product-imageblock">
+                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product7.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product7-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
+                                                            <div className="button-group text-center">
+                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
+                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
+                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
+                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="caption product-detail text-center">
+                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
+                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
+                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div className="tab-pane" id="Bestsellers">
                                         <div className="Bestsellers owl-carousel">
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product1-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -468,7 +496,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product3.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product3-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -489,7 +517,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product5.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product5-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -510,7 +538,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product6.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product6-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -531,7 +559,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product8.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product8-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -552,140 +580,10 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                             <div className="product-grid">
-                                                <div className="item">
+                                                <div className="col-sm-3 item">
                                                     <div className="product-thumb  mb_30">
                                                         <div className="image product-imageblock">
                                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product10.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product10-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tab-pane" id="Featured">
-                                        <div className="Featured owl-carousel">
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product2.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product2-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product4.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product4-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product6.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product6-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product8.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product8-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product10.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product10-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                            <div className="button-group text-center">
-                                                                <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="caption product-detail text-center">
-                                                            <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                            <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                            <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="product-grid">
-                                                <div className="item">
-                                                    <div className="product-thumb  mb_30">
-                                                        <div className="image product-imageblock">
-                                                            <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product2.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product2-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
                                                             <div className="button-group text-center">
                                                                 <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
                                                                 <div className="quickview"><a href="#"><span>Quick View</span></a></div>
@@ -726,9 +624,9 @@ export default class Home extends Component{
                                 <div className="tab-content clearfix box">
                                     <div className="tab-pane active" id="nArrivals">
                                         <div className="tab-pane" id="Featured">
-                                            <div className="Featured owl-carousel">
+                                            
                                                 <div className="product-grid">
-                                                    <div className="item">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb  mb_30">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product2.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product2-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -749,7 +647,7 @@ export default class Home extends Component{
                                                     </div>
                                                 </div>
                                                 <div className="product-grid">
-                                                    <div className="item">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb  mb_30">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product4.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product4-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -770,7 +668,7 @@ export default class Home extends Component{
                                                     </div>
                                                 </div>
                                                 <div className="product-grid">
-                                                    <div className="item">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb  mb_30">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product6.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product6-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -791,7 +689,7 @@ export default class Home extends Component{
                                                     </div>
                                                 </div>
                                                 <div className="product-grid">
-                                                    <div className="item">
+                                                    <div className="col-sm-3 item">
                                                         <div className="product-thumb  mb_30">
                                                             <div className="image product-imageblock">
                                                                 <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product8.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product8-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
@@ -811,49 +709,6 @@ export default class Home extends Component{
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="product-grid">
-                                                    <div className="item">
-                                                        <div className="product-thumb  mb_30">
-                                                            <div className="image product-imageblock">
-                                                                <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product10.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product10-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                                <div className="button-group text-center">
-                                                                    <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                    <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                    <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                    <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="caption product-detail text-center">
-                                                                <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                                <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                                <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-grid">
-                                                    <div className="item">
-                                                        <div className="product-thumb  mb_30">
-                                                            <div className="image product-imageblock">
-                                                                <a href="product_detail_page.html"> <img data-name="product_image" src={require( "../public/images/product/product2.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> <img src={require( "../public/images/product/product2-1.jpg")} alt="iPod Classic" title="iPod Classic" className="img-responsive" /> </a>
-                                                                <div className="button-group text-center">
-                                                                    <div className="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                                    <div className="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                                    <div className="compare"><a href="#"><span>Compare</span></a></div>
-                                                                    <div className="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="caption product-detail text-center">
-                                                                <div className="rating"> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-1x"></i></span> <span className="fa fa-stack"><i className="fa fa-star-o fa-stack-1x"></i><i className="fa fa-star fa-stack-x"></i></span> </div>
-                                                                <h6 data-name="product_name" className="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Vide..</a></h6>
-                                                                <span className="price"><span className="amount"><span className="currencySymbol">$</span>70.00</span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -864,8 +719,7 @@ export default class Home extends Component{
                                     <h2 className="main_title">Latest News</h2>
                                 </div>
                                 <div className="blog-contain box">
-                                    <div className="blog owl-carousel ">
-                                        <div className="item">
+                                    <div className="col-sm-4 item">
                                             <div className="box-holder">
                                                 <div className="thumb post-img">
                                                     <a href="#"> <img src={require( "../public/images/blog/blog_img_01.jpg")} alt="OYEENok" /> </a>
@@ -886,7 +740,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="item">
+                                    <div className="col-sm-4 item">
                                             <div className="box-holder">
                                                 <div className="thumb post-img">
                                                     <a href="#"> <img src={require( "../public/images/blog/blog_img_02.jpg")} alt="OYEENok" /> </a>
@@ -907,7 +761,7 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="item">
+                                    <div className="col-sm-4 item">
                                             <div className="box-holder">
                                                 <div className="thumb post-img">
                                                     <a href="#"> <img src={require( "../public/images/blog/blog_img_01.jpg")} alt="OYEENok" /> </a>
@@ -928,28 +782,6 @@ export default class Home extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="item">
-                                            <div className="box-holder">
-                                                <div className="thumb post-img">
-                                                    <a href="#"> <img src={require( "../public/images/blog/blog_img_02.jpg")} alt="OYEENok" /> </a>
-                                                    <div className="date-time text-center">
-                                                        <div className="day"> 11</div>
-                                                        <div className="month">Aug</div>
-                                                    </div>
-                                                    <div className="post-image-hover"> </div>
-                                                    <div className="post-info">
-                                                        <h6 className="mb_10 text-uppercase"> <a href="single_blog.html">Fashions fade, style is eternal</a> </h6>
-                                                        <div className="view-blog">
-                                                            <div className="write-comment pull-left"> <a href="single_blog.html"> 0 Comments</a> </div>
-                                                            <div className="read-more pull-right">
-                                                                <a href="single_blog.html"> <i className="fa fa-link"></i> read more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>
