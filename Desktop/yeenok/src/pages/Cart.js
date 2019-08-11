@@ -1,12 +1,29 @@
 import React, {Component}  from 'react';
-
+import classNames from 'classnames';
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 export default class Cart extends Component{
+    constructor(props) {
+        super(props);
+        this.toggle = this.toggle.bind(this);
+        this.state = { collapse: false };
+    }
     
+    toggle() {
+        console.log(this.state.collapse);
+        
+        this.setState(state => ({ collapse: !state.collapse }));
+    }
     render(){
     const textMiddle = {
         verticalAlign: 'middle'
     }
+    var vorcher = classNames('panel-collapse collapse ', {
+        'in' : this.state.collapse
+    })
+    var address = classNames('panel-collapse collapse ', {
+        'in' : !this.state.collapse
+    })
         return (
             <div className="wrapper">
                 <header id="header">
@@ -503,10 +520,10 @@ export default class Cart extends Component{
                             <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
                             <div className="panel-group mt_20" id="accordion">
                                 <div className="panel panel-default pull-left">
-                                    <div className="panel-heading">
-                                        <h4 className="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Use Coupon Code <i className="fa fa-caret-down"></i></a></h4>
+                                    <div className="panel-heading" onClick={this.toggle}>
+                                        <h4 className="panel-title">Use Coupon Code <i className="fa fa-caret-down"></i></h4>
                                     </div>
-                                    <div id="collapseOne" className="panel-collapse collapse in">
+                                    <div id="demo1" className={vorcher}>
                                         <div className="panel-body">
                                             <label for="input-coupon" className="col-sm-4 control-label">Enter your coupon here</label>
                                             <div className="input-group">
@@ -518,27 +535,11 @@ export default class Cart extends Component{
                                         </div>
                                     </div>
                                 </div>
-                                <div className="panel panel-default pull-left">
-                                    <div className="panel-heading">
-                                        <h4 className="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Use Gift Voucher <i className="fa fa-caret-down"></i></a> </h4>
-                                    </div>
-                                    <div id="collapseTwo" className="panel-collapse collapse">
-                                        <div className="panel-body">
-                                            <label for="input-voucher" className="col-sm-4 control-label">Enter your gift voucher code here</label>
-                                            <div className="input-group">
-                                                <input type="text" className="form-control" id="input-voucher" placeholder="Enter your gift voucher code here" value="" name="voucher" />
-                                                <span className="input-group-btn">
-                                                    <input type="button" className="btn" data-loading-text="Loading..." id="button-voucher" value="Apply Voucher" />
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="panel panel-default pull-left">
-                                    <div className="panel-heading">
+                               <div className="panel panel-default pull-left">
+                                    <div className="panel-heading" onClick={this.toggle}>
                                         <h4 className="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Estimate Shipping &amp; Taxes <i className="fa fa-caret-down"></i></a> </h4>
                                     </div>
-                                    <div id="collapseThree" className="panel-collapse collapse">
+                                    <div id="collapseThree" className={address}>
                                         <div className="panel-body">
                                             <p>Enter your destination to get a shipping estimate.</p>
                                             <form className="form-horizontal">
