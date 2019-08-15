@@ -9,6 +9,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Catagory from './pages/Catagory';
 import ProductDetail from './pages/ProductDetail';
+import BlogDetail from './pages/BlogDetail';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <About /> */}
       {/* <Blog /> */}
       {/* <Catagory /> */}
-      <ProductDetail />
+      {/* <ProductDetail /> */}
+      <BlogDetail />
     </div>
   );
 }
