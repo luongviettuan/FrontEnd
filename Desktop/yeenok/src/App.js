@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       
-      {/* <Home /> */}
+      <Home />
      {/* <Login /> */}
      {/* <Contact /> */}
       {/* <Cart /> */}
@@ -25,7 +25,7 @@ function App() {
       {/* <Catagory /> */}
       {/* <ProductDetail /> */}
       {/* <BlogDetail /> */}
-      <Checkout />
+      {/* <Checkout /> */}
     </div>
   );
 }

@@ -29,14 +29,29 @@ export default class Checkout extends Component{
     }
     this.setState({
       stepState : stepState
-    }, ()=>{
-      console.log(this.state.stepState);
     })
   }
     render(){
+      var step1 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step1
+      })
+      var step2 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step2
+      })
+      var step3 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step3
+      })
+      var step4 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step4
+      })
+      var step5 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step5
+      })
+      var step6 = classNames('panel-collapse collapse ', {
+        'in' : this.state.stepState.step6
+      })
         return(
-            <div class="wrapper">
-             
+            <div class="wrapper"> 
             <header id="header">
               <div class="header-top">
                 <div class="container">
@@ -460,7 +475,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step1')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Step 1: Checkout Options <i class="fa fa-caret-down"></i></a></h4>
                       </div>
-                      <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class={step1}>
                         <div class="panel-body">
                           <div class="row">
                             <div class="col-sm-6">
@@ -498,7 +513,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step2')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Step 2: Billing Details <i class="fa fa-caret-down"></i></a> </h4>
                       </div>
-                      <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class={step2}>
                         <div class="panel-body">
                           <form class="form-horizontal">
                             <div class="radio">
@@ -855,7 +870,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step3')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Step 3: Delivery Details <i class="fa fa-caret-down"></i></a> </h4>
                       </div>
-                      <div id="collapseThree" class="panel-collapse collapse">
+                      <div class={step3}>
                         <div class="panel-body">
                           <form class="form-horizontal">
                             <div class="radio">
@@ -1212,7 +1227,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step4')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">Step 4: Delivery Method <i class="fa fa-caret-down"></i></a> </h4>
                       </div>
-                      <div id="collapsefour" class="panel-collapse collapse">
+                      <div class={step4}>
                         <div class="panel-body">
                           <p>Please select the preferred shipping method to use on this order.</p>
                           <p><strong>Flat Rate</strong></p>
@@ -1236,7 +1251,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step5')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive">Step 5: Payment Method <i class="fa fa-caret-down"></i></a> </h4>
                       </div>
-                      <div id="collapsefive" class="panel-collapse collapse">
+                      <div class={step5}>
                         <div class="panel-body">
                           <p>Please select the preferred payment method to use on this order.</p>
                           <div class="radio">
@@ -1260,7 +1275,7 @@ export default class Checkout extends Component{
                       <div class="panel-heading" onClick={()=>this.StepSelect('step6')}>
                         <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Step 6: Confirm Order <i class="fa fa-caret-down"></i></a> </h4>
                       </div>
-                      <div id="collapsesix" class="panel-collapse collapse">
+                      <div class={step6}>
                         <div class="panel-body">
                           <div class="table-responsive">
                             <table class="table table-bordered table-hover">
