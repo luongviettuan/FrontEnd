@@ -19,13 +19,13 @@ function App() {
       {/* <Home /> */}
      {/* <Login /> */}
      {/* <Contact /> */}
-      <Cart />
+      {/* <Cart /> */}
       {/* <About /> */}
       {/* <Blog /> */}
       {/* <Catagory /> */}
       {/* <ProductDetail /> */}
       {/* <BlogDetail /> */}
-      {/* <Checkout /> */}
+      <Checkout />
     </div>
   );
 }
