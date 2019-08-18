@@ -16,10 +16,10 @@ function App() {
   return (
     <div className="App">
       
-      <Home />
+      {/* <Home /> */}
      {/* <Login /> */}
      {/* <Contact /> */}
-      {/* <Cart /> */}
+      <Cart />
       {/* <About /> */}
       {/* <Blog /> */}
       {/* <Catagory /> */}
