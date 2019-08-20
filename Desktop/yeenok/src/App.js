@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       
-      {/* <Home /> */}
+      <Home />
      {/* <Login /> */}
      {/* <Contact /> */}
       {/* <Cart /> */}
@@ -25,7 +25,7 @@ function App() {
       {/* <Catagory /> */}
       {/* <ProductDetail /> */}
       {/* <BlogDetail /> */}
-      <Checkout />
+      {/* <Checkout /> */}
     </div>
   );
 }
