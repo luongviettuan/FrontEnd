@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 import "../public/css/font-awesome.min.css"
 import "../public/css/bootstrap.css"
 import "../public/css/style.css"
@@ -14,7 +13,7 @@ import HomeItem from '../components/Home_Item';
 import HomeRes from '../components/Home_Res';
 import Footer from '../common/Footer';
 import HomeCustom from '../components/Home_Custom';
-
+import Login from './Login';
 export default class Home extends Component{
     render(){
         return (
@@ -30,6 +29,7 @@ export default class Home extends Component{
                     <HomeRes />
                 </div>
                 <Footer />
+           
             </div>
         )
     }

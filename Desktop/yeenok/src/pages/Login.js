@@ -17,10 +17,10 @@ import Footer from '../common/Footer';
 export default class Login extends Component{
     render(){
         return (
-            <div class="wrapper">
+            <div className="wrapper">
                 <Header />
-                <div class="container">
-                    <div class="row ">
+                <div className="container">
+                    <div className="row ">
                         <Redirect />
                         <MenuLeft />
                         <LoginForm />

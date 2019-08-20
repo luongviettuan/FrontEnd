@@ -1,32 +1,18 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Contact from './pages/Contact';
-import Cart from './pages/Cart';
+import Login from'./pages/Login';
 import About from './pages/About';
-import Blog from './pages/Blog';
-import Catagory from './pages/Catagory';
-import ProductDetail from './pages/ProductDetail';
-import BlogDetail from './pages/BlogDetail';
-import Checkout from './pages/Checkout';
-
 function App() {
   return (
-    <div className="App">
-      
-      <Home />
-     {/* <Login /> */}
-     {/* <Contact /> */}
-      {/* <Cart /> */}
-      {/* <About /> */}
-      {/* <Blog /> */}
-      {/* <Catagory /> */}
-      {/* <ProductDetail /> */}
-      {/* <BlogDetail /> */}
-      {/* <Checkout /> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Route path="/" exact component={Home} />
+        <Route path="/login/" exact component={Login} />
+        <Route path="/about/" exact component={About} />
+      </div>
+    </Router>
   );
 }
 

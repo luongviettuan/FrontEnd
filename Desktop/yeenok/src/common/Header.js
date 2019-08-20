@@ -1,4 +1,6 @@
 import React, { Component} from 'react';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+
 export default class Header extends Component{
     render(){
         return(
@@ -13,7 +15,10 @@ export default class Header extends Component{
                             </div>
                             <div className="col-xs-12 col-sm-8">
                                 <ul className="header-top-right text-right">
-                                    <li className="account"><a href="login.html">My Account</a></li> 
+                                    <li className="account">
+                                        {/* <a href="#">My Account</a> */}
+                                        <Link to="/login/" >My Account</Link>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>

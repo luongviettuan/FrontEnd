@@ -12,7 +12,7 @@ export default class HomeRes extends Component{
                             </div>
                             <div className="col-sm-6">
                                 <div className="news-form pull-right">
-                                    <form class="form-inline" onSubmit="return validatemail();" method="post">
+                                    <form className="form-inline" onSubmit="return validatemail();" method="post">
                                         <div className="form-group required">
                                             <input name="email" id="email" placeholder="Enter Your Email" className="form-control input-lg setWidth" required="" type="email" />
                                             <input type="submit" className="btn btn-default btn-lg" value="Subscribe" />
