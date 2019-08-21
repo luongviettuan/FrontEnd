@@ -1,4 +1,6 @@
 import React, { Component} from 'react';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+
 export default class Header extends Component{
     render(){
         return(
@@ -8,12 +10,14 @@ export default class Header extends Component{
                         <div className="row">
                             <div className="col-xs-12 col-sm-4">
                                 <div className="header-top-left">
-                                    <div className="contact"><a href="#">Call now !</a> <span className="hidden-xs hidden-sm hidden-md">+91 987-654-321</span></div>
+                                    <div className="contact"><a href="#">Call now !</a> <span className="hidden-xs hidden-sm hidden-md">033 919 6335</span></div>
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-8">
                                 <ul className="header-top-right text-right">
-                                    <li className="account"><a href="login.html">My Account</a></li> 
+                                    <li className="account">
+                                        <Link to="/login/" >Tài Khoản</Link>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -33,67 +37,12 @@ export default class Header extends Component{
                                 <a className="navbar-brand" href="index.html"> <img alt="OYEENok" src={require( '../public/images/logo.png')} /> </a>
                             </div>
                             <div className="col-xs-6 col-sm-4 shopcart">
-                                <div id="cart" className="btn-group btn-block mtb_40">
-                                    <button type="button" className="btn" data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping cart</span><span id="cart-total">items (0)</span> </button>
-                                </div>
-                                <div id="cart-dropdown" className="cart-menu collapse">
-                                    <ul>
-                                        <li>
-                                            <table className="table table-striped">
-                                                <tbody>
-                                                    <tr>
-                                                        <td className="text-center">
-                                                            <a href="#"><img src={require( '../public/images/product/70x84.jpg')} alt="iPod Classic" title="iPod Classic" /></a>
-                                                        </td>
-                                                        <td className="text-left product-name"><a href="#">MacBook Pro</a> <span className="text-left price">$20.00</span>
-                                                            <input className="cart-qty" name="product_quantity" min="1" value="1" type="number" />
-                                                        </td>
-                                                        <td className="text-center"><a className="close-cart"><i className="fa fa-times-circle"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td className="text-center">
-                                                            <a href="#"><img src={require( '../public/images/product/70x84.jpg')} alt="iPod Classic" title="iPod Classic" /></a>
-                                                        </td>
-                                                        <td className="text-left product-name"><a href="#">MacBook Pro</a> <span className="text-left price">$20.00</span>
-                                                            <input className="cart-qty" name="product_quantity" min="1" value="1" type="number" />
-                                                        </td>
-                                                        <td className="text-center"><a className="close-cart"><i className="fa fa-times-circle"></i></a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li>
-                                            <table className="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td className="text-right"><strong>Sub-Total</strong></td>
-                                                        <td className="text-right">$2,100.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td className="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                                        <td className="text-right">$2.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td className="text-right"><strong>VAT (20%)</strong></td>
-                                                        <td className="text-right">$20.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td className="text-right"><strong>Total</strong></td>
-                                                        <td className="text-right">$2,122.00</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li>
-                                            <form action="cart_page.html">
-                                                <input className="btn pull-left mt_10" value="View cart" type="submit" />
-                                            </form>
-                                            <form action="checkout_page.html">
-                                                <input className="btn pull-right mt_10" value="Checkout" type="submit" />
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
+                                {/* <Link to="/cart/" >Cart</Link> */}
+                                <Link to="/cart/" >
+                                    <div id="cart" className="btn-group btn-block mtb_40">
+                                        <button type="button" className="btn" data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping cart</span><span id="cart-total">items (0)</span> </button>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <nav className="navbar">
