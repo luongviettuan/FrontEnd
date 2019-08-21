@@ -21,7 +21,7 @@ export default class Login extends Component{
                 <Header />
                 <div className="container">
                     <div className="row ">
-                        <Redirect />
+                        <Redirect redirect="Login"/>
                         <MenuLeft />
                         <LoginForm />
                     </div>

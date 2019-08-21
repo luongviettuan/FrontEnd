@@ -19,7 +19,7 @@ export default class Home extends Component{
         return (
             <div>
                 <div className="wrapper">
-                    <Header />
+                    <Header/>
                     <HomeHeadSlider />
                     <div className="container">
                         <HomeBanner />

@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
 
 export default class Header extends Component{
@@ -35,12 +35,12 @@ export default class Header extends Component{
                                 </span> </div>
                             </div>
                             <div className="navbar-header col-xs-6 col-sm-4">
-                                <a className="navbar-brand" href="index.html"> <img alt="OYEENok" src={require( '../public/images/logo.png')} /> </a>
+                                <Link to="/" className="navbar-brand"><img alt="OYEENok" src={require( '../public/images/logo.png')} /></Link>
                             </div>
                             <div className="col-xs-6 col-sm-4 shopcart">
                                 <Link to="/cart/" >
                                     <div id="cart" className="btn-group btn-block mtb_40">
-                                        <button type="button" className="btn" data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping cart</span><span id="cart-total">items (0)</span> </button>
+                                        <button type="button" className="btn" aria-expanded="true"><span id="shippingcart">Giỏ Hàng</span><span id="cart-total">Mặt Hàng(0)</span> </button>
                                     </div>
                                 </Link>
                             </div>
@@ -50,7 +50,7 @@ export default class Header extends Component{
                             <button className="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse"> <span className="i-bar"><i className="fa fa-bars"></i></span></button>
                             <div className="collapse navbar-collapse js-navbar-collapse">
                                 <ul id="menu" className="nav navbar-nav">
-                                    <li> <a href="index.html">Trang Chủ</a></li>
+                                    <li><Link to="/">Trang Chủ</Link></li>
                                     <li> <a href="category_page.html">Đồ Nữ</a></li>
                                     <li> <a href="category_page.html">Đồ Nam</a></li>
                                     <li className="dropdown mega-dropdown"> <a href="#" className="dropdown-toggle" data-toggle="dropdown">Bộ Sưu Tập </a>
@@ -93,38 +93,20 @@ export default class Header extends Component{
                                             </li>
                                             <li className="col-md-3">
                                                 <ul>
-                                                    {/* <li id="myCarousel" className="carousel slide" data-ride="carousel">
-                                                        <div className="carousel-inner">
-                                                            <div className="item active">
-                                                                <a href="#"><img src={require( "../public/images/menu-banner1.jpg")} className="img-responsive" alt="Banner1" /></a>
-                                                            </div>
-
-                                                            <div className="item">
-                                                                <a href="#"><img src={require( "../public/images/menu-banner2.jpg")} className="img-responsive" alt="Banner1" /></a>
-                                                            </div>
-
-                                                            <div className="item">
-                                                                <a href="#"><img src={require( "../public/images/menu-banner3.jpg")} className="img-responsive" alt="Banner1" /></a>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </li> */}
                                                     <li>
                                                         <MenuBrandSlide />
                                                     </li>
-
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li> <a href="blog_page.html">Xu Hướng Mới</a></li>
-                                    <li> <a href="about.html">Liên Hệ</a></li>
+                                    <li> <Link to="/contact">Liên Hệ</Link></li>
                                     <li className="dropdown"> <a href="#" className="dropdown-toggle" data-toggle="dropdown">Trang </a>
                                         <ul className="dropdown-menu">
-                                            <li> <a href="cart_page.html">Giỏ Hàng</a></li>
-                                            <li> <a href="checkout_page.html">Kiểm Tra Đơn Hàng</a></li>
-                                            <li> <a href="single_blog.html">Xu Hướng Thời Trang</a></li>
+                                            <li><Link to="/cart">Giỏ Hàng</Link></li>
+                                            <li><Link to="/checkout">Kiểm Tra Đơn Hàng</Link></li>
+                                            <li><Link to="/blog" >Xu Hướng Thời Trang</Link></li>
                                         </ul>
                                     </li>
                                 </ul>

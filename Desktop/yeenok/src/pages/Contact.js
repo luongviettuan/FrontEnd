@@ -12,7 +12,7 @@ export default class Contact extends Component {
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect />
+                        <Redirect redirect="Contact"/>
                         <MenuLeft />
                         <ContactForm />
                     </div>

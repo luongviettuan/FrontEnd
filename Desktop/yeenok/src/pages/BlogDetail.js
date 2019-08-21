@@ -12,7 +12,7 @@ export default class BlogDetail extends Component {
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect />
+                        <Redirect redirect="BlogDetail"/>
                         <MenuLeft />
                         <BlogDetailContent />    
                     </div>

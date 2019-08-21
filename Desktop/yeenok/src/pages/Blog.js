@@ -11,7 +11,7 @@ export default class Blog extends Component {
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect />
+                        <Redirect redirect="Blog"/>
                         <MenuLeft />
                         <BlogContent />
                     </div>

@@ -58,18 +58,18 @@ export default class CartContent extends Component{
                     </tbody>
                 </table>
             </form>
-            <h3 className="mtb_10">What would you like to do next?</h3>
-            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+            <h3 className="mtb_10">Vui Lòng Thực Hiện Bước Tiếp Theo?</h3>
+            <p>Nhập Mã Giảm Giá (Nếu Có).</p>
             <div className="panel-group mt_20" id="accordion">
                 <div className="panel panel-default pull-left">
                     <div className="panel-heading" onClick={this.toggle}>
-                        <h4 className="panel-title">Use Coupon Code <i className="fa fa-caret-down"></i></h4>
+                        <h4 className="panel-title">Sử Dụng Mã Giảm Giá <i className="fa fa-caret-down"></i></h4>
                     </div>
                     <div id="demo1" className={vorcher}>
                         <div className="panel-body">
-                            <label for="input-coupon" className="col-sm-4 control-label">Enter your coupon here</label>
+                            <label for="input-coupon" className="col-sm-4 control-label">Mã giảm giá của bạn </label>
                             <div className="input-group">
-                                <input type="text" className="form-control" id="input-coupon" placeholder="Enter your coupon here" value="" name="coupon" />
+                                <input type="text" className="form-control" id="input-coupon" placeholder="Nhập mã giảm giá tại đây" value="" name="coupon" />
                                 <span className="input-group-btn">
                                     <input type="button" className="btn" data-loading-text="Loading..." id="button-coupon" value="Apply Coupon" />
                                 </span> 
@@ -79,14 +79,14 @@ export default class CartContent extends Component{
                 </div>
                <div className="panel panel-default pull-left">
                     <div className="panel-heading" onClick={this.toggle}>
-                        <h4 className="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Estimate Shipping &amp; Taxes <i className="fa fa-caret-down"></i></a> </h4>
+                        <h4 className="panel-title">Ước Tính Phí Vận Chuyển <i className="fa fa-caret-down"></i></h4>
                     </div>
                     <div id="collapseThree" className={address}>
                         <div className="panel-body">
-                            <p>Enter your destination to get a shipping estimate.</p>
+                            <p>Hãy cho chúng tôi biết địa chị bạn nhận hàng.</p>
                             <form className="form-horizontal">
                                 <div className="form-group required">
-                                    <label for="input-country" className="col-sm-2 control-label">Country</label>
+                                    <label for="input-country" className="col-sm-2 control-label">Tỉnh / Thành Phố</label>
                                     <div className="col-sm-10">
                                         <select className="form-control" id="input-country" name="country_id">
                                             <option value=""> --- Please Select --- </option>
@@ -347,7 +347,7 @@ export default class CartContent extends Component{
                                     </div>
                                 </div>
                                 <div className="form-group required">
-                                    <label for="input-zone" className="col-sm-2 control-label">Region / State</label>
+                                    <label for="input-zone" className="col-sm-2 control-label">Huyện / Quận</label>
                                     <div className="col-sm-10">
                                         <select className="form-control" id="input-zone" name="zone_id">
                                             <option value=""> --- Please Select --- </option>
@@ -462,7 +462,7 @@ export default class CartContent extends Component{
                                     </div>
                                 </div>
                                 <div className="form-group required">
-                                    <label for="input-postcode" className="col-sm-2 control-label">Post Code</label>
+                                    <label for="input-postcode" className="col-sm-2 control-label">Địa Chỉ Nhận</label>
                                     <div className="col-sm-10">
                                         <input type="text" className="form-control" id="input-postcode" placeholder="Post Code" value="" name="postcode" />
                                     </div>

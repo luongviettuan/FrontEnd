@@ -14,7 +14,7 @@ export default class Checkout extends Component {
         <Header />
         <div class="container">
           <div class="row ">
-            <Redirect />
+            <Redirect redirect="Checkout"/>
             <MenuLeft />
             <CheckoutContent />
           </div>

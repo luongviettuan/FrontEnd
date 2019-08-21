@@ -13,7 +13,7 @@ export default class Cart extends Component{
                 <Header />
                 <div className="container">
                     <div className="row ">
-                        <Redirect />
+                        <Redirect redirect="Cart"/>
                         <MenuLeft />
                         <CartContent /> 
                     </div>

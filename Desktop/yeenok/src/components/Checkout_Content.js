@@ -53,7 +53,7 @@ export default class CheckoutContent extends Component {
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default  ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step1')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Step 1: Checkout Options <i class="fa fa-caret-down"></i></a></h4>
+                            <h4 class="panel-title">Step 1: Checkout Options <i class="fa fa-caret-down"></i></h4>
                         </div>
                         <div class={step1}>
                             <div class="panel-body">
@@ -91,7 +91,7 @@ export default class CheckoutContent extends Component {
                     </div>
                     <div class="panel panel-default ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step2')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Step 2: Billing Details <i class="fa fa-caret-down"></i></a> </h4>
+                            <h4 class="panel-title">Step 2: Billing Details <i class="fa fa-caret-down"></i> </h4>
                         </div>
                         <div class={step2}>
                             <div class="panel-body">
@@ -448,7 +448,7 @@ export default class CheckoutContent extends Component {
                     </div>
                     <div class="panel panel-default ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step3')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Step 3: Delivery Details <i class="fa fa-caret-down"></i></a> </h4>
+                            <h4 class="panel-title">Step 3: Delivery Details <i class="fa fa-caret-down"></i></h4>
                         </div>
                         <div class={step3}>
                             <div class="panel-body">
@@ -805,7 +805,7 @@ export default class CheckoutContent extends Component {
                     </div>
                     <div class="panel panel-default ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step4')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">Step 4: Delivery Method <i class="fa fa-caret-down"></i></a> </h4>
+                            <h4 class="panel-title">Step 4: Delivery Method <i class="fa fa-caret-down"></i></h4>
                         </div>
                         <div class={step4}>
                             <div class="panel-body">
@@ -829,7 +829,7 @@ export default class CheckoutContent extends Component {
                     </div>
                     <div class="panel panel-default ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step5')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive">Step 5: Payment Method <i class="fa fa-caret-down"></i></a> </h4>
+                            <h4 class="panel-title">Step 5: Payment Method <i class="fa fa-caret-down"></i></h4>
                         </div>
                         <div class={step5}>
                             <div class="panel-body">
@@ -853,7 +853,7 @@ export default class CheckoutContent extends Component {
                     </div>
                     <div class="panel panel-default ">
                         <div class="panel-heading" onClick={() => this.StepSelect('step6')}>
-                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Step 6: Confirm Order <i class="fa fa-caret-down"></i></a> </h4>
+                            <h4 class="panel-title">Step 6: Confirm Order <i class="fa fa-caret-down"></i></h4>
                         </div>
                         <div class={step6}>
                             <div class="panel-body">

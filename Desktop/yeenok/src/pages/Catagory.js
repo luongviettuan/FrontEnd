@@ -13,7 +13,7 @@ export default class Catagory extends Component {
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect />
+                        <Redirect redirect="Catagory"/>
                         <MenuLeft />
                         <CatagoryContent />    
                     </div>

@@ -12,7 +12,7 @@ export default class About extends Component{
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect />
+                        <Redirect  redirect="About"/>
                         <MenuLeft />
                         <AboutContent />
                     </div>
