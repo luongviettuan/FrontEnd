@@ -6,7 +6,7 @@ export default class HomeRes extends Component{
                         <div className="row">
                             <div className="col-sm-6">
                                 <div className="news-head pull-left">
-                                    <h2>SIGN UP FOR NEWSLETTER</h2>
+                                    <h2>Đăng Ký Nhận Tin Khuyến Mãi</h2>
                                     <div className="new-desc">Be the First to know about our Fresh Arrivals and much more!</div>
                                 </div>
                             </div>

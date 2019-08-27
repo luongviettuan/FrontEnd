@@ -4,7 +4,7 @@ export default class SubHomeBlog extends Component{
         return (
             <div id="Blog" className="mt_50">
                     <div className="heading-part mb_10 ">
-                        <h2 className="main_title">Latest News</h2>
+                        <h2 className="main_title">Xu Hướng Mới</h2>
                     </div>
                     <div className="blog-contain box">
                         <div className="col-sm-4 item">
