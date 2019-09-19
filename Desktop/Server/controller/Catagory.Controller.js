@@ -5,7 +5,7 @@ module.exports.getItemOfCatagory = (req, res, next) =>{
     conn.query(sql, (err, rs)=>{
         if(err) throw err;
         else{
-            console.log(rs);
+            res.json(rs)
         }
     })
 }
