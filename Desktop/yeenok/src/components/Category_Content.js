@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-export default class CatagoryContent extends Component {
+export default class categoryContent extends Component {
     render(){
         return(
             <div class="col-sm-8 col-lg-9 mtb_20">

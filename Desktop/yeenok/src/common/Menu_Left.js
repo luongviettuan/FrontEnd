@@ -1,5 +1,25 @@
 import React, {Component} from 'react';
+import MenuLeftItem from '../util/Menu_Left_Item';
 export default class MenuLeft extends Component{
+    constructor(){
+        super();
+        this.state = {
+            data : [
+                {
+                    id : 1,
+                    name : 'Áo Thun'
+                },
+                {
+                    id : 2,
+                    name : 'Áo Sơ Mi'
+                },
+                {
+                    id : 3,
+                    name : 'Đồ Bộ & Đồ Mặc Nhà'
+                }
+            ]
+        }
+    }
     render(){
         return (
             <div id="column-left" className="col-sm-4 col-lg-3 hidden-xs">
@@ -9,19 +29,22 @@ export default class MenuLeft extends Component{
                             <h2 className="main_title">Top category</h2>
                         </div>
                         <ul className="nav  main-navigation collapse in">
-                            <li><a href="#">Appliances</a></li>
-                            <li><a href="#">Mobile Phones</a></li>
-                            <li><a href="#">Tablet PC & Accessories</a></li>
-                            <li><a href="#">Consumer Electronics</a></li>
-                            <li><a href="#">Computers & Networking</a></li>
-                            <li><a href="#">Electrical & Tools</a></li>
-                            <li><a href="#">Apparel</a></li>
-                            <li><a href="#">Bags & Shoes</a></li>
-                            <li><a href="#">Toys & Hobbies</a></li>
-                            <li><a href="#">Watches & Jewelry</a></li>
-                            <li><a href="#">Home & Garden</a></li>
-                            <li><a href="#">Health & Beauty</a></li>
-                            <li><a href="#">Outdoors & Sports</a></li>
+                            {
+                                this.state.data.map(item => <MenuLeftItem item={item}/>)
+                            }
+                            {/* <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#">Áo Khoác & Áo Vest</a></li>
+                            <li><a href="#">Đồ Đôi</a></li>
+                            <li><a href="#">Áo Nỉ & Áo Len</a></li>
+                            <li><a href="#">Quần</a></li>
+                            <li><a href="#">Ba Lô & Túi Xách & Ví</a></li>
+                            <li><a href="#">Thắt Lưng</a></li>
+                            <li><a href="#">Đồ Lót</a></li>
+                            <li><a href="#">Đầm</a></li>
+                            <li><a href="#">Chân Váy</a></li>
+                            <li><a href="#">Bộ Đồ Thể Thao</a></li> */}
                         </ul>
                     </div>
                 </div>

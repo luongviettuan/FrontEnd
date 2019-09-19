@@ -4,18 +4,18 @@ import Redirect from '../common/Redirect';
 import MenuLeft from '../common/Menu_Left';
 import Branch from '../common/Branch';
 import Footer from '../common/Footer';
-import CatagoryContent from '../components/Catagory_Content';
+import CategoryContent from '../components/Category_Content';
 
-export default class Catagory extends Component {
+export default class Category extends Component {
     render() {
         return (
             <div class="wrapper">
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect redirect="Catagory"/>
+                        <Redirect redirect="category"/>
                         <MenuLeft />
-                        <CatagoryContent />    
+                        <CategoryContent />    
                     </div>
                     <Branch />
                 </div>
