@@ -12,9 +12,13 @@ app.use('/user', UserRouter)
 const ProductRouter = require('./router/Product.Router');
 app.use('/product', ProductRouter)
 
-const CatagoryRouter = require('./router/Catagory.Router');
-app.use('/catagory', CatagoryRouter);
+const CategoryRouter = require('./router/Category.Router');
+app.use('/category', CategoryRouter);
 
+const RegitsterRouter = require('./router/Regitster.Router');
+app.use('/regitster', RegitsterRouter)
 
+const BrandRouter = require('./router/Brand.Router');
+app.use('/brand', BrandRouter)
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
