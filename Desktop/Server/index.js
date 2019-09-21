@@ -21,4 +21,10 @@ app.use('/regitster', RegitsterRouter)
 const BrandRouter = require('./router/Brand.Router');
 app.use('/brand', BrandRouter)
 
+const VoucherRouter = require('./router/Voucher.Router');
+app.use('/voucher', VoucherRouter)
+
+const OrderRouter = require('./router/Order.Router');
+app.use('/order', OrderRouter);
+
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
