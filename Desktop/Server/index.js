@@ -30,5 +30,8 @@ app.use('/order', OrderRouter);
 const LocaltionRouter = require('./router/Location.Router');
 app.use('/location',LocaltionRouter)
 
+const ReviewRouter = require('./router/Review.Router')
+app.use('/review', ReviewRouter);
+
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
