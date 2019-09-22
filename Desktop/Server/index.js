@@ -27,4 +27,8 @@ app.use('/voucher', VoucherRouter)
 const OrderRouter = require('./router/Order.Router');
 app.use('/order', OrderRouter);
 
+const LocaltionRouter = require('./router/Location.Router');
+app.use('/location',LocaltionRouter)
+
+
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
