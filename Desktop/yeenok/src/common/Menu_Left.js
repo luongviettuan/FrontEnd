@@ -1,24 +1,22 @@
 import React, {Component} from 'react';
 import MenuLeftItem from '../util/Menu_Left_Item';
+import axios from 'axios';
 export default class MenuLeft extends Component{
     constructor(){
         super();
         this.state = {
-            data : [
-                {
-                    id : 1,
-                    name : 'Áo Thun'
-                },
-                {
-                    id : 2,
-                    name : 'Áo Sơ Mi'
-                },
-                {
-                    id : 3,
-                    name : 'Đồ Bộ & Đồ Mặc Nhà'
-                }
-            ]
+            data : []
         }
+    }
+    componentDidMount(){
+        axios.get('http://localhost:8080/category')
+            .then(res=>{
+                console.log("123", res.data.result);
+                
+                this.setState({
+                    data : res.data.result
+                })
+            })
     }
     render(){
         return (
