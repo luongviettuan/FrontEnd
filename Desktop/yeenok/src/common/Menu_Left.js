@@ -11,8 +11,6 @@ export default class MenuLeft extends Component{
     componentDidMount(){
         axios.get('http://localhost:8080/category')
             .then(res=>{
-                console.log("123", res.data.result);
-                
                 this.setState({
                     data : res.data.result
                 })
@@ -24,25 +22,12 @@ export default class MenuLeft extends Component{
                 <div id="category-menu" className="navbar collapse in mb_40" aria-expanded="true" role="button">
                     <div className="nav-responsive">
                         <div className="heading-part">
-                            <h2 className="main_title">Top category</h2>
+                            <h2 className="main_title">Loại Sản Phẩm</h2>
                         </div>
                         <ul className="nav  main-navigation collapse in">
                             {
                                 this.state.data.map(item => <MenuLeftItem item={item}/>)
                             }
-                            {/* <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#">Áo Khoác & Áo Vest</a></li>
-                            <li><a href="#">Đồ Đôi</a></li>
-                            <li><a href="#">Áo Nỉ & Áo Len</a></li>
-                            <li><a href="#">Quần</a></li>
-                            <li><a href="#">Ba Lô & Túi Xách & Ví</a></li>
-                            <li><a href="#">Thắt Lưng</a></li>
-                            <li><a href="#">Đồ Lót</a></li>
-                            <li><a href="#">Đầm</a></li>
-                            <li><a href="#">Chân Váy</a></li>
-                            <li><a href="#">Bộ Đồ Thể Thao</a></li> */}
                         </ul>
                     </div>
                 </div>

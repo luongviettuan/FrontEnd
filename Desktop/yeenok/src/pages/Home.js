@@ -14,6 +14,7 @@ import HomeRes from '../components/Home_Res';
 import Footer from '../common/Footer';
 import HomeCustom from '../components/Home_Custom';
 import Login from './Login';
+import Branch from '../common/Branch';
 export default class Home extends Component{
     render(){
         return (
@@ -25,7 +26,8 @@ export default class Home extends Component{
                         <HomeBanner />
                         <HomeItem />
                     </div>
-                    <HomeCustom />
+                    
+                    <Branch />
                     <HomeRes />
                 </div>
                 <Footer />

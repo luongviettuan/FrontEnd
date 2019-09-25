@@ -8,7 +8,7 @@ export default class HomeItem extends Component{
             <div className="row ">
                 <SubHomeBanner />
                 <SubHomeItem2 />
-                <SubHomeBlog />
+                
             </div>
     
         )

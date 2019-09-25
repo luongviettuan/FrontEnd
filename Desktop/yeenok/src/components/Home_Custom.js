@@ -1,15 +1,38 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 export default class HomeCustom extends Component{
+    constructor(){
+        super();
+        this.state = {
+            data : []
+        }
+    }
+    componentDidMount(){
+        axios.get('http://localhost:8080/brand')
+            .then(res => {
+                this.setState({
+                    data : res.data.result
+                })
+            })
+    }
     render(){
+        const {data} = this.state;
         return (
             <div id="brand_carouse" className="ptb_50 text-center">
                         <div className="type-01">
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="brand owl-carousel ptb_20">
-                                        <div className="item text-center">
-                                            <a href="#"><img src={require( "../public/images/brand/brand2.png")} alt="Dell" className="img-responsive" /></a>
-                                        </div>
+                                        {
+                                            data.map(item => {
+                                                return (
+                                                    <div className="item text-center">
+                                                        <a href="#"><img src={require( "../public/images/brand/brand1.jpeg")} alt="Dell" className="img-responsive" /></a>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                        {/* 
                                         <div className="item text-center">
                                             <a href="#"><img src={require( "../public/images/brand/brand1.png")} alt="Disney" className="img-responsive" /></a>
                                         </div>
@@ -33,7 +56,7 @@ export default class HomeCustom extends Component{
                                         </div>
                                         <div className="item text-center">
                                             <a href="#"><img src={require( "../public/images/brand/brand9.png")} alt="Canon" className="img-responsive" /></a>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
