@@ -20,7 +20,6 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
-          
           <Route path="/about" exact component={About} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/blog" exact component={Blog} />
@@ -29,8 +28,9 @@ function App() {
           <Route path="/category" exact component={Category} />
           <Route path="/checkout" exact component={Checkout} />
           <Route path="/contact" exact component={Contact} />
-          <Route path="/productdetail" exact component={ProductDetail} />
+          <Route path="/productdetail/:id" exact component={ProductDetail} />
           <Route part="/regitster" exact component={Regitster} />
+          <Route part="/brand/:id" exact component={Category} />
           
         </Switch>
       </div>

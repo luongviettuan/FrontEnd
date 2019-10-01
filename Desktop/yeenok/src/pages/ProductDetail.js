@@ -4,9 +4,25 @@ import MenuLeft from '../common/Menu_Left';
 import Branch from '../common/Branch';
 import Footer from '../common/Footer';
 import ProductDetailContent from '../components/ProductDetail_Content';
+import axios from 'axios';
 
 export default class ProductDetail extends Component{
-    render(){
+    constructor(){
+        super();
+        this.state = {
+            data : []
+        }
+    }
+    componentDidMount(){
+        let url = 'http://localhost:8080/product/' + this.props.match.params.id
+        axios.get(url)
+            .then( res =>{
+                this.setState({
+                    data : res.data.result[0]
+                })
+            })
+    }
+    render(){  
         return(
             <div class="wrapper">
                 <Header />
@@ -14,7 +30,7 @@ export default class ProductDetail extends Component{
                     <div class="row ">
                         <Redirect redirect="ProductDetail"/>
                         <MenuLeft />
-                        <ProductDetailContent /> 
+                        <ProductDetailContent data= {this.state.data} /> 
                     </div>
                     <Branch />    
                 </div>

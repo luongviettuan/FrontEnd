@@ -37,10 +37,11 @@ export default class Branch extends Component {
                 <Slider {...settings}>
                     {
                         data.map(item => {
+                            let id = `/brand/${item.brand_id}`
                             return (
                                 <div>
                                     <h3>
-                                        <Link>
+                                        <Link to={id}>
                                             <img src={require('../public/images/brand/' + item.brand_img_url)} alt="Disney" class="img-responsive" />
                                         </Link>        
                                     </h3>
