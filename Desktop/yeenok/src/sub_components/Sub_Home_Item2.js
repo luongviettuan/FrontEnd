@@ -4,7 +4,7 @@ export default class SubHomeItem2 extends Component{
         return(
             <div id="product-tab" className="mt_50">
                 <div className="heading-part mb_10 ">
-                    <h2 className="main_title">Thời Trang Mới</h2>
+                    <h2 className="main_title">Sản Phẩm Đã Xem</h2>
                 </div>
                 <div className="tab-content clearfix box">
                     <div className="tab-pane active" id="nArrivals">

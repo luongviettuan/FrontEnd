@@ -66,7 +66,7 @@ export default class HomeBanner extends Component{
                                         <Link to="/category/16">
                                             <button className="btn mb_10 cms_btn">View product</button>
                                         </Link>
-                                        <h2>Giày & Dép</h2>
+                                        <h2>Kính Thời Trang</h2>
                                         <p className="mt_10">Tạo Nên Sự Khác Biệt Của Bạn</p>
                                     </div>
                                 </div>

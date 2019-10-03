@@ -1,24 +1,26 @@
-import React, { Component} from 'react';
-import {Link} from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
 
-export default class Header extends Component{
-    render(){
-        return(
+export default class Header extends Component {
+    render() {
+        return (
             <header id="header">
                 <div className="header-top">
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-12 col-sm-4">
                                 <div className="header-top-left">
-                                    <div className="contact"><a href="#">Gọi Ngay !</a> <span className="hidden-xs hidden-sm hidden-md">033 919 6335</span></div>
+                                    <div className="contact">
+                                        <a href="#">Gọi Ngay !</a> <span className="hidden-xs hidden-sm hidden-md">033 919 6335</span>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-8">
                                 <ul className="header-top-right text-right">
                                     <li className="account">
                                         <Link to="/login/" >Tài Khoản</Link>
-                                    </li> 
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -31,11 +33,14 @@ export default class Header extends Component{
                                 <div className="main-search mt_40">
                                     <input id="search-input" name="search" value="" placeholder="Tìm kiếm ..." className="form-control input-lg" autoComplete="off" type="text" />
                                     <span className="input-group-btn">
-                                <button type="button" className="btn btn-default btn-lg"><i className="fa fa-search"></i></button>
-                                </span> </div>
+                                        <button type="button" className="btn btn-default btn-lg">
+                                            <i className="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                             <div className="navbar-header col-xs-6 col-sm-4">
-                                <Link to="/" className="navbar-brand"><img alt="OYEENok" src={require( '../public/images/logo.png')} /></Link>
+                                <Link to="/" className="navbar-brand"><img alt="OYEENok" src={require('../public/images/logo.png')} /></Link>
                             </div>
                             <div className="col-xs-6 col-sm-4 shopcart">
                                 <Link to="/cart/" >
@@ -57,47 +62,43 @@ export default class Header extends Component{
                                         <ul className="dropdown-menu mega-dropdown-menu row">
                                             <li className="col-md-3">
                                                 <ul>
-                                                    <li className="dropdown-header">Nữ Giới</li>
-                                                    <li><a href="#">Unique Features</a></li>
-                                                    <li><a href="#">Image Responsive</a></li>
-                                                    <li><a href="#">Auto Carousel</a></li>
-                                                    <li><a href="#">Newsletter Form</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Good Typography</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="col-md-3">
-                                                <ul>
-                                                    <li className="dropdown-header">Nam Giới</li>
-                                                    <li><a href="#">Unique Features</a></li>
-                                                    <li><a href="#">Image Responsive</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Auto Carousel</a></li>
-                                                    <li><a href="#">Newsletter Form</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Good Typography</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="col-md-3">
-                                                <ul>
-                                                    <li className="dropdown-header">Trẻ Em</li>
-                                                    <li><a href="#">Unique Features</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Image Responsive</a></li>
-                                                    <li><a href="#">Auto Carousel</a></li>
-                                                    <li><a href="#">Newsletter Form</a></li>
-                                                    <li><a href="#">Four columns</a></li>
-                                                    <li><a href="#">Good Typography</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="col-md-3">
-                                                <ul>
                                                     <li>
                                                         <MenuBrandSlide />
                                                     </li>
                                                 </ul>
                                             </li>
+                                            <li className="col-md-3">
+                                                <ul>
+                                                    <li className="dropdown-header">Quần Áo Công Sở</li>
+                                                    <li><a href="#">Áo Thun</a></li>
+                                                    <li><a href="#">Áo Sơ Mi</a></li>
+                                                    <li><a href="#">Áo Khoác & Áo Vest</a></li>
+                                                    <li><a href="#">Áo Nỉ & Áo Len</a></li>
+                                                    <li><a href="#">Quần</a></li>
+                                                    <li><a href="#">Đầm</a></li>
+                                                    <li><a href="#">Chân Váy</a></li>
+                                                </ul>
+                                            </li>
+                                            <li className="col-md-3">
+                                                <ul>
+                                                    <li className="dropdown-header">Đồ Bộ</li>
+                                                    <li><a href="#">Đồ Bộ & Đồ Mặc Nhà</a></li>
+                                                    <li><a href="#">Đồ Đôi</a></li>
+                                                    <li><a href="#">Đồ Lót</a></li>
+                                                    <li><a href="#">Bộ Đồ Thể Thao</a></li>
+                                                    <li><a href="#">Bộ Đồ Bơi</a></li>
+                                                </ul>
+                                            </li>
+                                            <li className="col-md-3">
+                                                <ul>
+                                                    <li className="dropdown-header">Phụ Kiện</li>
+                                                    <li><a href="#">Ba Lô & Túi Xách & Ví</a></li>
+                                                    <li><a href="#">Thắt Lưng</a></li>
+                                                    <li><a href="#">Mũ Thời Trang</a></li>
+                                                    <li><a href="#">Kính Dâm</a></li>
+                                                </ul>
+                                            </li>
+                                            
                                         </ul>
                                     </li>
                                     <li> <a href="blog_page.html">Xu Hướng Mới</a></li>
@@ -117,7 +118,7 @@ export default class Header extends Component{
                 </div>
             </header>
 
-        
+
         )
     }
 }
