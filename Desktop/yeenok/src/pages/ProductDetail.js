@@ -5,12 +5,11 @@ import Branch from '../common/Branch';
 import Footer from '../common/Footer';
 import ProductDetailContent from '../components/ProductDetail_Content';
 import axios from 'axios';
-
 export default class ProductDetail extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            data : []
+            data : {}
         }
     }
     componentDidMount(){
@@ -18,24 +17,24 @@ export default class ProductDetail extends Component{
         axios.get(url)
             .then( res =>{
                 this.setState({
-                    data : res.data.result[0]
+                    data : res.data.result
                 })
             })
     }
-    render(){  
-        return(
-            <div class="wrapper">
-                <Header />
-                <div class="container">
-                    <div class="row ">
-                        <Redirect redirect="ProductDetail"/>
-                        <MenuLeft />
-                        <ProductDetailContent data= {this.state.data} /> 
+    render(){
+            return(
+                <div class="wrapper">
+                    <Header />
+                    <div class="container">
+                        <div class="row ">
+                            <Redirect redirect="ProductDetail"/>
+                            <MenuLeft />
+                            <ProductDetailContent data={this.state.data}/>
+                        </div>
+                        <Branch />    
                     </div>
-                    <Branch />    
-                </div>
-                <Footer />
-                </div>
-        )
+                    <Footer />
+                    </div>
+            )
     }
 }

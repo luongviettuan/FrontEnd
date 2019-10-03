@@ -1,56 +1,68 @@
 import React, { Component } from 'react';
 import NumericInput from 'react-numeric-input';
 import SubRelatedProduct from '../sub_components/Sub_Related_Product';
+
 export default class ProductDetailContent extends Component {
+
     render() {
+
+        const data = this.props.data
+
+        let image_url = "";
+        if(data.product_image_url !== undefined){
+            image_url = require(`../public/images/product/${data.product_image_url}`)
+        }
+
         return (
             <div className="col-sm-8 col-lg-9 mtb_20">
                 <div className="row mt_10 ">
                     <div className="col-md-6">
-                        <div><img data-name="product_image" src={require(`../public/images/product/khoac1.jpeg`)} alt="" /></div>
+                        <div>
+                            <img 
+                            data-name="product_image"
+                            src={image_url}
+                            alt="" />
+                            </div>
                     </div>
                     <div className="col-md-6 prodetail caption product-thumb">
-                        <h4 data-name="product_name" className="product-name">{this.props.data.product_name}</h4>
-                        <span className="price mb_20"><span className="amount"><span className="currencySymbol">Giá : </span>{this.props.data.price} VNĐ</span>
+                        <h4 data-name="product_name" className="product-name">{data.product_name}</h4>
+                        <span className="price mb_20"><span className="amount"><span className="currencySymbol">Giá : </span>{data.price} VNĐ</span>
                         </span>
                         <hr></hr>
                         <ul className="list-unstyled product_info mtb_20">
                             <li>
                                 <label>Brand:</label>
-                                <span>{this.props.data.brand_id}</span>
+                                <span>{data.brand_name}</span>
                             </li>
                             <li>
                                 <label>Trạng Thái:</label>
-                                <span>{this.props.data.status}</span>
+                                <span>{data.status}</span>
                             </li>
                         </ul>
                         <hr></hr>
-                        <p className="product-desc mtb_30">{this.props.data.description}</p>
+                        <p className="product-desc mtb_30">{data.description}</p>
                         <div id="product">
                             <div className="form-group">
                                 <div className="row">
                                     <div className="Sort-by col-md-4">
                                         <label>Kích Cỡ</label>
                                         <select name="product_size" id="select-by-size" className="selectpicker form-control">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                            <option>XXL</option>
+                                            {
+                                                data.size !== undefined && data.size.map(item=><option name={item} key={item}>{item}</option>)
+                                            }
                                         </select>
                                     </div>
                                     <div className="Color col-md-4">
                                         <label>Màu Sắc</label>
                                         <select name="product_color" id="select-by-color" className="selectpicker form-control">
-                                            <option>Xanh</option>
-                                            <option>Đỏ</option>
-                                            <option>Trắng</option>
-                                            <option>Đen</option>
+                                            {
+                                                data.color !== undefined && data.color.map(item => <option name={item} key={item}>{item}</option>)
+                                            }
                                         </select>
                                     </div>
                                     <div className="Color col-md-4">
                                         <label>Số Lượng</label>
-                                        <NumericInput min="1" value="1" className="form-control" />
+                                        <NumericInput min="1" value="1" className="form-control" name=""/>
                                     </div>
                                 </div>
 
