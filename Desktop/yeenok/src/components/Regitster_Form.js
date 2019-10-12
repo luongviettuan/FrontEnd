@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import NotificationModal from '../util/Notification_Modal'
 export default class LoginForm extends Component{
     constructor(props){
         super(props);
@@ -16,9 +17,11 @@ export default class LoginForm extends Component{
                 username : "",
                 password : "",
                 confirmPassword: ""
-            }
+            },
+            message_resgiter :  {},
+            modal : false
         }
-
+        this.toggle = this.toggle.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleLogin = this.handleLogin.bind(this)
     }
@@ -50,12 +53,20 @@ export default class LoginForm extends Component{
 
     handleLogin(event){
         axios.post("http://localhost:8080/user/register", this.state.user).then(res =>{
-            console.log (res.data.message)
+            this.setState({
+                message_resgiter : res.data
+            })
         })
         event.preventDefault();
     }
+    toggle() {
+        this.setState({
+          modal: true
+        });
+      }
     render(){
-
+        console.log(this.state.modal);
+        
         return(
             <div className="col-sm-8 col-lg-9 mtb_20">
                 <div className="row">
@@ -128,12 +139,18 @@ export default class LoginForm extends Component{
                                             <div className="form-group">
                                                 <div className="row">
                                                     <div className="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Đăng Ký"/>
+                                                        <input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Đăng Ký" onClick={this.toggle}/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </form>
-                            
+                                        {
+                                            this.state.modal === true &&  <NotificationModal
+                                                modal = {this.state.modal}
+                                                message = {this.state.message_resgiter.message}
+                                                code = {this.state.message_resgiter.code}
+                                            />
+                                        }
                                     </div>
                                 </div>
                             </div>

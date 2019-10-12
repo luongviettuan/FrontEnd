@@ -12,12 +12,13 @@ import Category from './pages/Category';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import ProductDetail from './pages/ProductDetail';
-
+import NotificationModal from './util/Notification_Modal'
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
+        
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/about" exact component={About} />
@@ -32,6 +33,7 @@ function App() {
           <Route part="/regitster" exact component={Regitster} />
           <Route part="/brand/:id" exact component={Category} />
           
+         
         </Switch>
       </div>
     </Router>

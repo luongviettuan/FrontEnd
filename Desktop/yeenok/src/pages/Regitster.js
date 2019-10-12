@@ -10,6 +10,7 @@ import Redirect from '../common/Redirect';
 import MenuLeft from '../common/Menu_Left';
 import RegitsterForm from '../components/Regitster_Form';
 import Footer from '../common/Footer';
+import NotificationModal from '../util/Notification_Modal';
 
 
 
@@ -27,6 +28,7 @@ export default class Regitster extends Component{
                     </div>
                 </div>
                 <Footer />
+                
             </div> 
         )
     }
