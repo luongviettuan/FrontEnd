@@ -1,6 +1,6 @@
 const conn = require('../model/config')
 const md5 = require('md5')
-
+const jwt = require('jsonwebtoken');
 const UserUtil = require('../util/User.Util')
 // module.exports.login = (req, res, next) =>{
 
@@ -13,17 +13,12 @@ module.exports.postLogin = (req, res, next) =>{
     conn.query(sql, (err, rs)=>{
         if(err) throw err;
         else if(rs.length > 0){
-            res.json({
-                code : '200',
-                message : 'ok ok'
-            })
-            next()
+            const payload = {username};
+            let token = jwt.sign(payload, 'queenok', {expiresIn: '24h'});
+            res.cookie('token', token).sendStatus(200);
         }
         else{
-            res.json({
-                code : '0',
-                message : 'Username hoặc mật khẩu không chính xác'
-            })
+            res.sendStatus(201)
         }
     })
 }

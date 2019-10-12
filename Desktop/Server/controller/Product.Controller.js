@@ -35,5 +35,4 @@ module.exports.getProductById = (req, res, next)=>{
             
         }
     })
-    
 }

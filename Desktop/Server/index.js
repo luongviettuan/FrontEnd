@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const port = 8080;
-
-
+var jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -32,11 +33,37 @@ app.use('/brand', BrandRouter)
 const VoucherRouter = require('./router/Voucher.Router');
 app.use('/voucher', VoucherRouter)
 
-const OrderRouter = require('./router/Order.Router');
-app.use('/order', OrderRouter);
-
 const LocaltionRouter = require('./router/Location.Router');
 app.use('/location',LocaltionRouter)
+
+app.use((req, res, next)=>{
+    const token =
+    req.body.token ||
+    req.query.token ||
+    req.headers['x-access-token'] ||
+    req.cookies.token;
+    console.log(token);
+    
+    if (!token) {
+        res.status(401).send('Unauthorized: No token provided');
+        return;
+    } else {
+        jwt.verify(token, 'queenok', function(err, decoded) {
+          if (err) {
+            res.status(401).send('Unauthorized: Invalid token');
+            return;
+          } else {
+            req.username = decoded.username;
+            next();
+          }
+        });
+    }
+})
+
+
+
+const OrderRouter = require('./router/Order.Router');
+app.use('/order', OrderRouter);
 
 const ReviewRouter = require('./router/Review.Router')
 app.use('/review', ReviewRouter);
