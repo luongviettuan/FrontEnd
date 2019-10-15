@@ -1,7 +1,7 @@
 const conn = require('../model/config')
 const HelpUtil = require('../util/Help.Util')
 module.exports.getAllProduct = (req, res, next)=>{
-    let sql = "select product_name, product_image_url, price from Product";
+    let sql = "select product_id, product_name, product_image_url, price from Product";
     conn.query(sql, (err, rs)=>{
         if(err) throw err;
         else(
