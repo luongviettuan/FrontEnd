@@ -1,11 +1,36 @@
 import React, { Component } from 'react';
-import NumericInput from 'react-numeric-input';
 import SubRelatedProduct from '../sub_components/Sub_Related_Product';
-
+import {CartContext} from '../context/Cart.Context'
 export default class ProductDetailContent extends Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            product : {
+                product_id: this.props.data.product_id,
+                product_name: this.props.data.product_name,
+                product_image_url: this.props.data.product_image_url,
+                price : this.props.data.price,
+                size : "",
+                color: "",
+                unit : 1
+            }
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        const { value, name } = event.target;
+        this.setState({
+            product : {
+                ...this.state.product,
+                product_id: this.props.data.product_id,
+                product_name: this.props.data.product_name,
+                product_image_url: this.props.data.product_image_url,
+                price : this.props.data.price,
+                [name]: value
+            }
+        })
+    }
     render() {
-
         const data = this.props.data
 
         let image_url = "";
@@ -46,7 +71,7 @@ export default class ProductDetailContent extends Component {
                                 <div className="row">
                                     <div className="Sort-by col-md-4">
                                         <label>Kích Cỡ</label>
-                                        <select name="product_size" id="select-by-size" className="selectpicker form-control">
+                                        <select name="size" value={this.state.product.size} onChange={this.handleChange} id="select-by-size" className="selectpicker form-control">
                                             {
                                                 data.size !== undefined && data.size.map(item=><option name={item} key={item}>{item}</option>)
                                             }
@@ -54,7 +79,7 @@ export default class ProductDetailContent extends Component {
                                     </div>
                                     <div className="Color col-md-4">
                                         <label>Màu Sắc</label>
-                                        <select name="product_color" id="select-by-color" className="selectpicker form-control">
+                                        <select name="color" value={this.state.product.color} onChange={this.handleChange} id="select-by-color" className="selectpicker form-control">
                                             {
                                                 data.color !== undefined && data.color.map(item => <option name={item} key={item}>{item}</option>)
                                             }
@@ -62,15 +87,19 @@ export default class ProductDetailContent extends Component {
                                     </div>
                                     <div className="Color col-md-4">
                                         <label>Số Lượng</label>
-                                        <NumericInput min="1" value="1" className="form-control" name=""/>
+                                        <input type="number" min="1" value={this.state.product.unit} onChange={this.handleChange} className="form-control" name="unit"/>
                                     </div>
                                 </div>
 
                             </div>
                             <div className="button-group mt_30">
-                                <div className="add-to-cart"><span>Add to cart</span></div>
-                                <div className="wishlist"><span>wishlist</span></div>
-                                <div className="compare"><span>Compare</span></div>
+                                <CartContext.Consumer>
+                                    {
+                                        ({addToCart}) =><div className="add-to-cart" onClick={()=>addToCart(this.state.product)}><span>Add to cart</span></div>
+                                    }
+                                </CartContext.Consumer>
+                                {/* <div className="wishlist"><span>wishlist</span></div>
+                                <div className="compare"><span>Compare</span></div> */}
                             </div>
                         </div>
                     </div>

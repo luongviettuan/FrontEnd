@@ -5,12 +5,14 @@ import {Link} from "react-router-dom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-export default class Branch extends Component {
+export default class Brand extends Component {
     constructor(){
         super();
         this.state = {
-            data : []
+            data : [],
+
         }
+
     }
     componentDidMount(){
         axios.get('http://localhost:8080/brand')
@@ -31,7 +33,7 @@ export default class Branch extends Component {
             autoplaySpeed: 2000,
             pauseOnHover: true,
           };
-
+        
         return (
             <div style={{margin: "40px 40px"}}>
                 <Slider {...settings}>
@@ -39,7 +41,7 @@ export default class Branch extends Component {
                         data.map(item => {
                             let id = `/brand/${item.brand_id}`
                             return (
-                                <div>
+                                <div >
                                     <h3>
                                         <Link to={id}>
                                             <img src={require('../public/images/brand/' + item.brand_img_url)} alt="Disney" class="img-responsive" />

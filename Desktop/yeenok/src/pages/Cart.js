@@ -3,7 +3,7 @@ import Header from '../common/Header';
 import Redirect from '../common/Redirect';
 import MenuLeft from '../common/Menu_Left';
 import CartContent from '../components/Cart_Content';
-import Branch from '../common/Branch';
+import Brand from '../common/Brand';
 import Footer from '../common/Footer';
 
 export default class Cart extends Component{
@@ -17,7 +17,7 @@ export default class Cart extends Component{
                         <MenuLeft />
                         <CartContent /> 
                     </div>
-                    <Branch />
+                    <Brand />
                 </div>
                 <Footer />
             </div>

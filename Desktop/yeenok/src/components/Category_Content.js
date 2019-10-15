@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 export default class categoryContent extends Component {
     render(){
-        console.log(this.props.data);
-        
         return(
             <div class="col-sm-8 col-lg-9 mtb_20">
                 <div class="category-page-wrapper mb_30">

@@ -13,30 +13,31 @@ import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import ProductDetail from './pages/ProductDetail';
 import NotificationModal from './util/Notification_Modal'
+import {CartProvider} from './context/Cart.Context'
+import Brand from './pages/Brand';
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-        
-          <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/about" exact component={About} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/category/:id" exact component={Category} />
-          <Route path="/blogdetail" exact component={BlogDetail} />
-          <Route path="/category" exact component={Category} />
-          <Route path="/checkout" exact component={Checkout} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/productdetail/:id" exact component={ProductDetail} />
-          <Route part="/regitster" exact component={Regitster} />
-          <Route part="/brand/:id" exact component={Category} />
-          
-         
-        </Switch>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <Switch>
+          <Route path="/productdetail/:id"  component={ProductDetail} />
+            <Route path="/" exact component={Home} />
+            <Route path="/about"  component={About} />
+            <Route path="/blogdetail"  component={BlogDetail} />
+            <Route path="/cart"  component={Cart} />
+            <Route path="/category/:id"  component={Category} />
+            <Route path="/category"  component={Category} />
+            <Route path="/checkout"  component={Checkout} />
+            <Route path="/contact"  component={Contact} />
+            <Route path="/login"  component={Login} />
+            <Route path="/brand/:id" component={Brand} />
+            <Route part="/regitster" component={Regitster} />
+            
+          </Switch>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

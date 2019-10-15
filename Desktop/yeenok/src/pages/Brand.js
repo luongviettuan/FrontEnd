@@ -6,7 +6,7 @@ import Brand from '../common/Brand';
 import Footer from '../common/Footer';
 import CategoryContent from '../components/Category_Content';
 import axios from 'axios';
-export default class Category extends Component {
+export default class Brand_Show extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,22 +14,23 @@ export default class Category extends Component {
         }
     }
     componentDidMount(){
-        axios.get(`http://localhost:8080/category/${this.props.match.params.id}`)
+
+        axios.get(`http://localhost:8080/brand/${this.props.match.params.id}`)
             .then(res =>{
                 this.setState({
-                    data : res.data
+                    data : res.data.result
                 })
             })
     }
     render() {
-        console.log(this.props);
+        console.log("11111111111111111111111111111111111",this.props.match.params.id);
         
         return (
             <div class="wrapper">
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect redirect="category"/>
+                        <Redirect redirect="Brand"/>
                         <MenuLeft />
                         <CategoryContent data ={this.state.data}/>
                            

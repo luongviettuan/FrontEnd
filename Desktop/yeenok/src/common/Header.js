@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
-
+import {CartContext} from '../context/Cart.Context'
 export default class Header extends Component {
     render() {
         return (
@@ -45,7 +45,15 @@ export default class Header extends Component {
                             <div className="col-xs-6 col-sm-4 shopcart">
                                 <Link to="/cart/" >
                                     <div id="cart" className="btn-group btn-block mtb_40">
-                                        <button type="button" className="btn" aria-expanded="true"><span id="shippingcart">Giỏ Hàng</span><span id="cart-total">Mặt Hàng(0)</span> </button>
+                                        <button type="button" className="btn" aria-expanded="true">
+                                            <span id="shippingcart">Giỏ Hàng</span>
+                                            <CartContext.Consumer>
+                                                {
+                                                    ({cartItems}) =><span id="cart-total">Mặt Hàng({cartItems.length})</span>
+                                                }
+                                            </CartContext.Consumer>
+                                            
+                                        </button>
                                     </div>
                                 </Link>
                             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../common/Header';
 import Redirect from '../common/Redirect';
 import MenuLeft from '../common/Menu_Left';
-import Branch from '../common/Branch';
+import Brand from '../common/Brand';
 import Footer from '../common/Footer';
 import CheckoutContent from '../components/Checkout_Content';
 
@@ -18,7 +18,7 @@ export default class Checkout extends Component {
             <MenuLeft />
             <CheckoutContent />
           </div>
-          <Branch />  
+          <Brand />  
         </div>
         <Footer />
       </div>
