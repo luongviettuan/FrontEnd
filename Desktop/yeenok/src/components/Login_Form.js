@@ -62,10 +62,10 @@ export default class LoginForm extends Component{
                             <div className="panel-heading">
                                 <div className="row mb_20">
                                     <div className="col-xs-6">
-                                        <Link to="/login">Login</Link>
+                                        <Link to="/login"><p>Đăng Nhập</p></Link>
                                     </div>
                                     <div className="col-xs-6">
-                                        <Link to="/regitster">Register</Link>
+                                        <Link to="/regitster"><p>Đăng Ký</p></Link>
                                     </div>
                                 </div>
                                 <hr></hr>
@@ -76,11 +76,11 @@ export default class LoginForm extends Component{
                                         <form id="login-form" onSubmit={this.onSubmit}>
                                             <div className="form-group">
                                                 <label>Tên Đăng Nhập</label>
-                                                <input type="text" name="username" id="username1" tabIndex="1" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handleInputChange}/>
+                                                <input type="text" name="username" id="username1" tabIndex="1" className="form-control" placeholder="Tên Đăng Nhập" value={this.state.username} onChange={this.handleInputChange}/>
                                             </div>
                                             <div className="form-group">
                                                 <label>Mật Khẩu</label>
-                                                <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleInputChange}/>
+                                                <input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Mật Khẩu" value={this.state.password} onChange={this.handleInputChange}/>
                                             </div>
                                             <div className="form-inline text-center">
                                                 <input type="checkbox" tabIndex="3" className="" name="remember" id="remember" />

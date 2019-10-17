@@ -65,8 +65,6 @@ export default class LoginForm extends Component{
         });
       }
     render(){
-        console.log(this.state.modal);
-        
         return(
             <div className="col-sm-8 col-lg-9 mtb_20">
                 <div className="row">
@@ -75,10 +73,10 @@ export default class LoginForm extends Component{
                             <div className="panel-heading">
                                 <div className="row mb_20">
                                     <div className="col-xs-6">
-                                        <Link to="/login">Đăng Nhập</Link>
+                                        <Link to="/login"><p>Đăng Nhập</p></Link>
                                     </div>
                                     <div className="col-xs-6">
-                                        <Link to="/regitster">Đăng Ký</Link>
+                                        <Link to="/regitster"><p>Đăng Ký</p></Link>
                                     </div>
                                 </div>
                                 <hr></hr>

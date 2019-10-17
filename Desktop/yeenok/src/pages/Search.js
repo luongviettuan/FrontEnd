@@ -14,22 +14,26 @@ export default class Category extends Component {
         }
     }
     componentDidMount(){
-        axios.get(`http://localhost:8080/category/${this.props.match.params.id}`)
-            .then(res =>{
+        axios.get(`http://localhost:8080/product/search${this.props.location.search}`)
+            .then(res => {
+                console.log(res.data.result);
                 this.setState({
-                    data : res.data
+                    data : res.data.result
                 })
             })
     }
     render() {
+
         return (
             <div class="wrapper">
                 <Header />
                 <div class="container">
                     <div class="row ">
-                        <Redirect redirect="category"/>
+                        <Redirect redirect="Search"/>
                         <MenuLeft />
-                        <CategoryContent data ={this.state.data}/>
+                        {
+                            this.state.data.length > 0 && <CategoryContent data ={this.state.data}/>
+                        }
                     </div>
                     <Brand />
                 </div>

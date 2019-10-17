@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
-import {CartContext} from '../context/Cart.Context'
+import { Button} from 'reactstrap';
+import CartListItems from '../util/Cart_ListItem'
 export default class CartContent extends Component{
     constructor(props) {
         super(props);
@@ -10,14 +10,11 @@ export default class CartContent extends Component{
     }
     
     toggle() {
-        console.log(this.state.collapse);
-        
         this.setState(state => ({ collapse: !state.collapse }));
     }
     render(){
-        const textMiddle = {
-            verticalAlign: 'middle'
-        }
+        
+        
         var vorcher = classNames('panel-collapse collapse ', {
             'in' : this.state.collapse
         })
@@ -26,7 +23,7 @@ export default class CartContent extends Component{
         })
         return(
             <div className="col-sm-8 col-lg-9 mtb_20">
-            <form method="post" action="#">
+            
                 <table className="table">
                     <thead>
                     <tr>
@@ -39,36 +36,10 @@ export default class CartContent extends Component{
                     </tr>
                     </thead>
                     <tbody>
-                                            {/* <CartContext.Consumer>
-                                                {
-                                                     
-                                                    ({cartItems}) =>{
-                                                        let cartItem = cartItems[0]
-                                                        cartItem.map(item =>
-                                                            <tr>
-                                                                <td ><img className="img-responsive" src={require('../public/images/product/70x84.jpg')} alt=""/></td>
-                                                                <td style={textMiddle}>Áo Sơ Mi Trắng</td>
-                                                                <td style={textMiddle}>L-Đen</td>
-                                                                <td style={textMiddle}>1</td>
-                                                                <td style={textMiddle}>150000</td>
-                                                            </tr>
-                                                            )
-                                                    }
-                                                    
-                                                    
-                                                }
-                                            </CartContext.Consumer> */}
-                                 <tr>
-                                     <td ><img className="img-responsive" src={require('../public/images/product/70x84.jpg')} /></td>
-                                     <td style={textMiddle}>Áo Sơ Mi Trắng</td>
-                                     <td style={textMiddle}>L-Đen</td>
-                                     <td style={textMiddle}>1</td>
-                                     <td style={textMiddle}>150000</td>
-                                 </tr>
-                           
+                            <CartListItems />   
                     </tbody>
                 </table>
-            </form>
+            
             <h3 className="mtb_10">Vui Lòng Thực Hiện Bước Tiếp Theo?</h3>
             <p>Nhập Mã Giảm Giá (Nếu Có).</p>
             <div className="panel-group mt_20" id="accordion">

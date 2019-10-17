@@ -1,13 +1,11 @@
 import React from 'react';
-import {Link, Route} from 'react-router-dom';
-export default function MenuLeftItem(props,{match}){
-    const id = '/category/' + props.item.category_id;
+import {Link} from 'react-router-dom';
+export default function MenuLeftItem(props){
     return(
         <li>
-            <Link to={props.item.category_id}>
+            <Link to={`/category/${props.item.category_id}`}>
                 {props.item.category_name}
             </Link>
-            <Route path={props.item.category_id}/>
         </li>
     )
 }

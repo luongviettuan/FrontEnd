@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 export default class categoryContent extends Component {
     render(){
         return(
             <div class="col-sm-8 col-lg-9 mtb_20">
-                <div class="category-page-wrapper mb_30">
+                {/* <div class="category-page-wrapper mb_30">
                     <div class="list-grid-wrapper pull-left">
                         <div class="btn-group btn-list-grid">
                             <button type="button" id="grid-view" class="btn btn-default grid-view active"></button>
@@ -41,6 +42,7 @@ export default class categoryContent extends Component {
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                     </div>
                 </div>
+                 */}
                 <div class="row">
                     {
                         this.props.data.length >0 && this.props.data.map(item =>
@@ -50,14 +52,15 @@ export default class categoryContent extends Component {
                                         <div class="image product-imageblock">
                                             <a href="product_detail_page.html"> <img data-name="product_image" src={require(`../public/images/product/${item.product_image_url}`)} alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src={require(`../public/images/product/${item.product_image_url}`)} alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
                                             <div class="button-group text-center">
-                                                <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                                <div class="quickview"><a href="#"><span>Quick View</span></a></div>
-                                                <div class="compare"><a href="#"><span>Compare</span></a></div>
-                                                <div class="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+                                                <Link to={`/productdetail/${item.product_id}`}>
+                                                    <div class="quickview">
+                                                        <span>Quick View</span>
+                                                    </div>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div class="caption product-detail text-center">
-                                            <h6 data-name="product_name" class="product-name mt_20"><a href="#" title="Casual Shirt With Ruffle Hem">{item.product_name}</a></h6>
+                                            <h6 data-name="product_name" class="product-name mt_20">{item.product_name}</h6>
                                             <span class="price"><span class="amount"><span class="currencySymbol">Giá</span> {item.price} VNĐ</span>
                                             </span>
                                         </div>
@@ -69,7 +72,7 @@ export default class categoryContent extends Component {
                                  
                     }
                 </div>
-                <div class="pagination-nav text-center mt_50">
+                {/* <div class="pagination-nav text-center mt_50">
                     <ul>
                         <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
                         <li class="active"><a href="#">1</a></li>
@@ -77,7 +80,7 @@ export default class categoryContent extends Component {
                         <li><a href="#">3</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
                     </ul>
-                </div>
+                </div> */}
             </div>
 
         )

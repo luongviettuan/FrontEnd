@@ -16,7 +16,7 @@ export class CartProvider extends Component{
             cartItems : Object.entries(localStorage)
         })
     }
-    render(){
+    render(){        
         return <CartContext.Provider 
             value={{
                 cartItems : this.state.cartItems,
@@ -27,4 +27,16 @@ export class CartProvider extends Component{
                 }
             </CartContext.Provider>
     }
+    
 }
+export function withCart (Component) {
+    return class _ extends React.Component {
+      render () {
+        return (
+          <CartContext.Consumer>
+            {value => { return <Component {...this.props} {...value} /> }}
+          </CartContext.Consumer>
+        )
+      }
+    }
+  }

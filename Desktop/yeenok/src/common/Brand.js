@@ -45,7 +45,7 @@ export default class Brand extends Component {
                                     <h3>
                                         <Link to={id}>
                                             <img src={require('../public/images/brand/' + item.brand_img_url)} alt="Disney" class="img-responsive" />
-                                        </Link>        
+                                        </Link>
                                     </h3>
                                 </div>
                             )

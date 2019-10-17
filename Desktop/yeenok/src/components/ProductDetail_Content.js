@@ -37,7 +37,7 @@ export default class ProductDetailContent extends Component {
         if(data.product_image_url !== undefined){
             image_url = require(`../public/images/product/${data.product_image_url}`)
         }
-
+        
         return (
             <div className="col-sm-8 col-lg-9 mtb_20">
                 <div className="row mt_10 ">

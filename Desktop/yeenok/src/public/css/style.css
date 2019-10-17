@@ -147,7 +147,7 @@ hr {
     color: #fff;
     padding: 5px 15px;
 }
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .change_color_li:hover, .change_color_li:focus {
     background-color: #e40001;
     color: #fff;
 }
@@ -187,14 +187,13 @@ ul {
 a {
     cursor: pointer;
     text-decoration: none;
-    color: #808080;
+    color: #ffff;
     transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
     -webkit-transition: all 0.25s ease 0s;
     -o-transition: all 0.25s ease 0s;
 }
 a:hover, a:focus {
-    color: #000;
     text-decoration: none;
     transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
@@ -209,9 +208,11 @@ a.active {
     color: #000;
 }
 p {
+    color: black !important;
     margin: 0;
     padding: 0;
 }
+
 h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -1033,6 +1034,7 @@ label.checkme {
 ----------------------------------------------- */
 
 .navbar {
+    line-height: 50px;
     border-radius: 0;
     border: 0;
     margin: 0;
@@ -1136,7 +1138,7 @@ label.checkme {
     text-align: center;
     width: 100%;
 }
-#menu>li>a {
+#menu>li>span {
     padding: 15px 18px;
     border-radius: 0;
     overflow: hidden;
@@ -2804,4 +2806,11 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
         z-index: 1040;
         background-color: gray;
         opacity: 0.5;
+}
+.navbar-nav > li:hover, .navbar-nav > li:focus{
+    background-color: #cc3d3d;
+    
+}
+.change_color_li > span {
+    margin-left: 10px;
 }
