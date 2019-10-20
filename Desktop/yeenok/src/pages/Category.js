@@ -21,6 +21,16 @@ export default class Category extends Component {
                 })
             })
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            axios.get(`http://localhost:8080/category/${this.props.match.params.id}`)
+            .then(res =>{
+                this.setState({
+                    data : res.data
+                })
+            })
+        }
+    }
     render() {
         return (
             <div class="wrapper">

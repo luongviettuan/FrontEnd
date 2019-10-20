@@ -26,7 +26,7 @@ export default class MenuLeft extends Component{
                         </div>
                         <ul className="nav  main-navigation collapse in">
                             {
-                                this.state.data.map(item => <MenuLeftItem item={item}/>)
+                                this.state.data.map(item => <MenuLeftItem item={item} key={item.category_id}/>)
                             }
                         </ul>
                     </div>

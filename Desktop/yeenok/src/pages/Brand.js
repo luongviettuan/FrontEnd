@@ -14,13 +14,22 @@ export default class Brand_Show extends Component {
         }
     }
     componentDidMount(){
-
         axios.get(`http://localhost:8080/brand/${this.props.match.params.id}`)
             .then(res =>{
                 this.setState({
                     data : res.data.result
                 })
             })
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            axios.get(`http://localhost:8080/brand/${this.props.match.params.id}`)
+            .then(res =>{
+                this.setState({
+                    data : res.data.result
+                })
+            })
+        }
     }
     render() {
         console.log("11111111111111111111111111111111111",this.props.match.params.id);

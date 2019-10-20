@@ -19,7 +19,7 @@ export default class HomeBanner extends Component{
                                     </div>
                                     <div className="bannertext text-center">
                                         <Link to='/category/15'>
-                                            <button className="btn mb_10 cms_btn">View product</button>
+                                            <button className="btn mb_10 cms_btn">Xem Chi Tiết</button>
                                         </Link>
                                         <h2>Mũ & Nón</h2>
                                         <p className="mt_10">Đa Dạng Kích Thước & Màu Sắc</p>
@@ -31,7 +31,7 @@ export default class HomeBanner extends Component{
                                     </div>
                                     <div className="bannertext text-center">
                                         <Link to="/category/9">    
-                                            <button className="btn mb_10 cms_btn">View product</button>
+                                            <button className="btn mb_10 cms_btn">Xem Chi Tiết</button>
                                         </Link>
                                         <h2>Thắt Lưng</h2>
                                         <p className="mt_10">Thời Trang Khẳng Định Đẳng Cấp</p>
@@ -52,7 +52,7 @@ export default class HomeBanner extends Component{
                                     </div>
                                     <div className="bannertext text-center">
                                         <Link to="/category/8">
-                                            <button className="btn mb_10 cms_btn">View product</button>
+                                            <button className="btn mb_10 cms_btn">Xem Chi Tiết</button>
                                         </Link>
                                         <h2>Cặp & Túi Xách & Ví</h2>
                                         <p className="mt_10">Hàng Hiệu & Phong Cách Thời Trang</p>
@@ -64,7 +64,7 @@ export default class HomeBanner extends Component{
                                     </div>
                                     <div className="bannertext text-center">
                                         <Link to="/category/16">
-                                            <button className="btn mb_10 cms_btn">View product</button>
+                                            <button className="btn mb_10 cms_btn">Xem Chi Tiết</button>
                                         </Link>
                                         <h2>Kính Thời Trang</h2>
                                         <p className="mt_10">Tạo Nên Sự Khác Biệt Của Bạn</p>

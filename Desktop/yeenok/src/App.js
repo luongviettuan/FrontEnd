@@ -20,10 +20,9 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-          <Route path="/productdetail/:id"  component={ProductDetail} />
+            <Route path="/productdetail/:id"  component={ProductDetail} />
             <Route path="/" exact component={Home} />
             <Route path="/about"  component={About} />
-            <Route path="/blogdetail"  component={BlogDetail} />
             <Route path="/cart"  component={Cart} />
             <Route path="/category/:id"  component={Category} />
             <Route path="/category"  component={Category} />
@@ -33,7 +32,6 @@ function App() {
             <Route path="/login"  component={Login} />
             <Route path="/brand/:id" component={Brand} />
             <Route part="/regitster" component={Regitster} />
-            
           </Switch>
         </div>
       </Router>

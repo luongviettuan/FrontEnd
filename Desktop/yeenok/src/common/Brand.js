@@ -39,12 +39,14 @@ export default class Brand extends Component {
                 <Slider {...settings}>
                     {
                         data.map(item => {
-                            let id = `/brand/${item.brand_id}`
                             return (
-                                <div >
+                                <div key={item.brand_id}>
                                     <h3>
-                                        <Link to={id}>
-                                            <img src={require('../public/images/brand/' + item.brand_img_url)} alt="Disney" class="img-responsive" />
+                                        <Link to={`/brand/${item.brand_id}`}>
+                                            <img
+                                                src={require('../public/images/brand/' + item.brand_img_url)}
+                                                alt="Disney"
+                                                className="img-responsive" />
                                         </Link>
                                     </h3>
                                 </div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {withCart, Consumer} from '../context/Cart.Context'
+import {withCart} from '../context/Cart.Context'
 
 class CartListItems extends Component{
     constructor(props){
@@ -25,7 +25,7 @@ class CartListItems extends Component{
         return(
             
                 listItems.length > 0 && listItems.map(item =>
-                    <tr>
+                    <tr key={item.product_id}>
                         <td >
                             <img
                                 className="img-responsive"

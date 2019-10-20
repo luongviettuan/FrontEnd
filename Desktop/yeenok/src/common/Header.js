@@ -56,10 +56,10 @@ export default class Header extends Component {
                             <button className="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse"> <span className="i-bar"><i className="fa fa-bars"></i></span></button>
                             <div className="collapse navbar-collapse js-navbar-collapse">
                                 <ul id="menu" className="nav navbar-nav">
-                                    <li><span><Link>Trang Chủ</Link></span></li>
-                                    <li><span><Link>Đồ Nữ</Link></span></li>
-                                    <li><span><Link>Đồ Nam</Link></span></li>
-                                    <li className="dropdown ul_change"><span><Link>Bộ Sưu Tập</Link></span>
+                                    <li><span><Link to="/">Trang Chủ</Link></span></li>
+                                    <li><span><Link to="/">Đồ Nữ</Link></span></li>
+                                    <li><span><Link to="/">Đồ Nam</Link></span></li>
+                                    <li className="dropdown ul_change"><span><Link to="/">Bộ Sưu Tập</Link></span>
                                         <ul className="dropdown-menu row" style={{marginLeft: '-52.65rem', width: '117rem'}}>
                                             <li className="col-md-3">
                                                 <ul>
@@ -101,9 +101,9 @@ export default class Header extends Component {
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><span><Link>Xu Hướng Mới</Link></span></li>
-                                    <li><span><Link>Liên Hệ</Link></span></li>
-                                    <li className="dropdown"><span><Link>Trang</Link></span>
+                                    <li><span><Link to='/'>Xu Hướng Mới</Link></span></li>
+                                    <li><span><Link to='/'>Liên Hệ</Link></span></li>
+                                    <li className="dropdown"><span><Link to="/">Trang</Link></span>
                                         <ul className="dropdown-menu">
                                             <Link to="/cart"><li className="change_color_li"><span>Giỏ Hàng</span></li></Link>
                                             <Link to="/checkout"><li className="change_color_li"><span>Kiểm Tra Đơn Hàng</span></li></Link>

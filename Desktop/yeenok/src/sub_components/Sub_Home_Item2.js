@@ -24,14 +24,14 @@ export default class SubHomeItem2 extends Component{
         return(
             <div id="product-tab" className="mt_50">
                 <div className="heading-part mb_10 ">
-                    <h2 className="main_title">Sản Phẩm Đã Xem</h2>
+                    <h2 className="main_title">Có Thể Bạn Sẽ Thích</h2>
                 </div>
                 <div className="tab-content clearfix box">
                     <div className="tab-pane active" id="nArrivals">
                         <div className="tab-pane" id="Featured">
                             {
                                 productList.length > 0 && productList.slice(ramdomNumber, ramdomNumber+4).map(product=>
-                                        <div className="product-grid">
+                                        <div className="product-grid" key={product.product_id}>
                                             <div className="col-sm-3 item">
                                                 <div className="product-thumb  mb_30">
                                                     <div className="image product-imageblock">
