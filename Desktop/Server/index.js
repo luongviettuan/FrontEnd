@@ -15,7 +15,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-var UserRouter = require('./router/User.Router')
+const GHN = require('./other/ghn')
+app.use('/get_api_GHN', GHN)
+
+const UserRouter = require('./router/User.Router')
 app.use('/user', UserRouter)
 
 const ProductRouter = require('./router/Product.Router');
