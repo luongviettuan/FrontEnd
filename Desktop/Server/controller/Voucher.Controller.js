@@ -11,3 +11,22 @@ module.exports.getAllVoucher = (req, res, next) => {
         }
     })
 }
+module.exports.getVoucherByName = (req,res, next)=>{
+    const voucher_id = req.body.voucher_id;
+    let sql = `SELECT * FROM Voucher WHERE voucher_id = "${voucher_id}"`;
+    conn.query(sql, (err, rs)=>{
+        if(err) throw err;
+        else if(rs.length >0){
+            res.json({
+                code : 200,
+                result : rs
+            })
+        }
+        else{
+            res.json({
+                code : 403,
+                result : 'Voucher Không Hợp Lệ'
+            })
+        }
+    })
+}

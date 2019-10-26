@@ -2,20 +2,21 @@ const conn = require('../model/config')
 const md5 = require('md5')
 const jwt = require('jsonwebtoken');
 const UserUtil = require('../util/User.Util')
-// module.exports.login = (req, res, next) =>{
 
-// }
 module.exports.postLogin = (req, res, next) =>{
     let username = req.body.username
     let password = req.body.password
     let hashedPassword = md5(password)
-    let sql = `select username, password from User where username = '${username}' and password = '${hashedPassword}'`;
+    let sql = `select full_name, username, password from User where username = '${username}' and password = '${hashedPassword}'`;
     conn.query(sql, (err, rs)=>{
         if(err) throw err;
         else if(rs.length > 0){
             const payload = {username};
             let token = jwt.sign(payload, 'queenok', {expiresIn: '24h'});
-            res.cookie('token', token).sendStatus(200);
+            res.json({
+                token : token,
+                full_name : rs[0].full_name
+            });
         }
         else{
             res.sendStatus(201)
