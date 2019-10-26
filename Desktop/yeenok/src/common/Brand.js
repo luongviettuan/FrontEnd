@@ -35,7 +35,7 @@ export default class Brand extends Component {
           };
         
         return (
-            <div style={{margin: "40px 40px"}}>
+            <div style={{margin: "40px 40px 40px 110px"}}>
                 <Slider {...settings}>
                     {
                         data.map(item => {

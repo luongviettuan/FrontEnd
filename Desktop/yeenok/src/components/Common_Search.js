@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class CommonSearch extends Component {
     constructor(){
@@ -15,6 +15,7 @@ export default class CommonSearch extends Component {
             q : event.target.value
         })
     }
+    
     render(){
         return (
             <div className="col-xs-12 col-sm-4">

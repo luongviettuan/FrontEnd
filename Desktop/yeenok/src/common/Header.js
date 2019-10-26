@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { withCookies, Cookies } from 'react-cookie';
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
 import {CartContext} from '../context/Cart.Context'
 import CommonSearch from '../components/Common_Search';
-export default class Header extends Component {
+class Header extends Component {
+    constructor(props){
+        super(props);
+        const { cookies } = props;
+        this.state = {
+            name: cookies.get('name') || ''
+        };
+    }
     render() {
+        const {name}= this.state;
         return (
             <header id="header">
                 <div className="header-top">
@@ -21,7 +30,11 @@ export default class Header extends Component {
                             <div className="col-xs-12 col-sm-8">
                                 <ul className="header-top-right text-right">
                                     <li className="account">
-                                        <Link to="/login/" >Tài Khoản</Link>
+                                        {
+                                            name.length>0 ?
+                                            <Link to="/" >Xin Chào : {name}</Link> :
+                                            <Link to="/login/" >Tài Khoản</Link> 
+                                        }
                                     </li>
                                 </ul>
                             </div>
@@ -122,3 +135,4 @@ export default class Header extends Component {
         )
     }
 }
+export default withCookies(Header)

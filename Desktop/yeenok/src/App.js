@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { CookiesProvider } from 'react-cookie';
 import './App.css';
 import Home from './pages/Home';
 import Login from'./pages/Login';
@@ -16,26 +17,28 @@ import {CartProvider} from './context/Cart.Context'
 import Brand from './pages/Brand';
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/productdetail/:id"  component={ProductDetail} />
-            <Route path="/" exact component={Home} />
-            <Route path="/about"  component={About} />
-            <Route path="/cart"  component={Cart} />
-            <Route path="/category/:id"  component={Category} />
-            <Route path="/category"  component={Category} />
-            <Route path="/checkout"  component={Checkout} />
-            <Route path="/contact"  component={Contact} />
-            <Route path="/search" component={Search} />
-            <Route path="/login"  component={Login} />
-            <Route path="/brand/:id" component={Brand} />
-            <Route part="/regitster" component={Regitster} />
-          </Switch>
-        </div>
-      </Router>
-    </CartProvider>
+    <CookiesProvider>
+      <CartProvider>
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route path="/productdetail/:id"  component={ProductDetail} />
+              <Route path="/" exact component={Home} />
+              <Route path="/about"  component={About} />
+              <Route path="/cart"  component={Cart} />
+              <Route path="/category/:id"  component={Category} />
+              <Route path="/category"  component={Category} />
+              <Route path="/checkout"  component={Checkout} />
+              <Route path="/contact"  component={Contact} />
+              <Route path="/search" component={Search} />
+              <Route path="/login"  component={Login} />
+              <Route path="/brand/:id" component={Brand} />
+              <Route part="/regitster" component={Regitster} />
+            </Switch>
+          </div>
+        </Router>
+      </CartProvider>
+    </CookiesProvider>
   );
 }
 

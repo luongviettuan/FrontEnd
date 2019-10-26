@@ -776,9 +776,7 @@ select {
     text-indent: 1px;
     text-overflow: '';
 }
-textarea {
-    min-height: 140px;
-}
+
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #808080;
@@ -1434,6 +1432,7 @@ label.checkme {
 
 .left_banner {
     display: inline-block;
+    border: 1px grey solid
 }
 .left-cms {
     color: #000;
@@ -2813,4 +2812,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 .change_color_li > span {
     margin-left: 10px;
+}
+
+.star{
+    padding: 0.5rem
 }

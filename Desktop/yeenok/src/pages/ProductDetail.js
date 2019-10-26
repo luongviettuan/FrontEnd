@@ -23,10 +23,10 @@ export default class ProductDetail extends Component{
     }
     render(){
             return(
-                <div class="wrapper">
+                <div className="wrapper">
                     <Header />
-                    <div class="container">
-                        <div class="row ">
+                    <div className="container">
+                        <div className="row ">
                             <Redirect redirect="ProductDetail"/>
                             <MenuLeft />
                             <ProductDetailContent data={this.state.data}/>

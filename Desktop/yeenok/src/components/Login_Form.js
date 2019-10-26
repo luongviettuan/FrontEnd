@@ -3,7 +3,9 @@ import NotificationModal from '../util/Notification_Modal'
 import {Link, Redirect} from "react-router-dom";
 
 import axios from'axios';
-export default class LoginForm extends Component{
+import {withCookies, Cookies } from 'react-cookie';
+
+class LoginForm extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -15,7 +17,6 @@ export default class LoginForm extends Component{
         this.toggle = this.toggle.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        
     }
     renderRedirect = () => {
         if (this.state.redirect) {
@@ -33,17 +34,19 @@ export default class LoginForm extends Component{
         axios.post('http://localhost:8080/user/login',
             {
                 username : this.state.username,
-                password : this.state.password
-            }
+                password : this.state.password,
+            },
         ).then(res =>{
-            if(res.status === 200){
+            if(res.data.token){
+                const { cookies } = this.props;
+                cookies.set('token', res.data.token);
+                cookies.set('name', res.data.full_name);
                 this.setState({
                     redirect: true
                   })
             }
             else{
                 console.log('sai');
-                
             }
         })
     }
@@ -113,3 +116,4 @@ export default class LoginForm extends Component{
         )
     }
 }
+export default withCookies(LoginForm);

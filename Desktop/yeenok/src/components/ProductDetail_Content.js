@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SubRelatedProduct from '../sub_components/Sub_Related_Product';
 import {CartContext} from '../context/Cart.Context'
+import ClassNames from 'classnames';
+import StarsRating from 'stars-rating';
+import SubHomeItem2 from '../sub_components/Sub_Home_Item2'
 export default class ProductDetailContent extends Component {
     constructor(props){
         super(props);
@@ -13,9 +16,19 @@ export default class ProductDetailContent extends Component {
                 size : "",
                 color: "",
                 unit : 1
-            }
+            },
+            active : true
         }
         this.handleChange = this.handleChange.bind(this)
+        this.toggle = this.toggle.bind(this)
+    }
+    ratingChanged = (newRating) => {
+        console.log(newRating)
+    }
+    toggle() {
+        this.setState(
+            state => ({ active: !state.active })
+        );
     }
     handleChange(event){
         const { value, name } = event.target;
@@ -31,7 +44,15 @@ export default class ProductDetailContent extends Component {
         })
     }
     render() {
+
         const data = this.props.data
+
+        let overviewClass = ClassNames({
+            'active': this.state.active
+        })
+        let commentClass = ClassNames({
+            'active': !this.state.active
+        })
 
         let image_url = "";
         if(data.product_image_url !== undefined){
@@ -71,7 +92,7 @@ export default class ProductDetailContent extends Component {
                                 <div className="row">
                                     <div className="Sort-by col-md-4">
                                         <label>Kích Cỡ</label>
-                                        <select name="size" value={this.state.product.size} onChange={this.handleChange} id="select-by-size" className="selectpicker form-control">
+                                        <select name="size" value={this.state.product.size} onChange={this.handleChange} className="selectpicker form-control">
                                             {
                                                 data.size !== undefined && data.size.map(item=><option name={item} key={item}>{item}</option>)
                                             }
@@ -79,7 +100,7 @@ export default class ProductDetailContent extends Component {
                                     </div>
                                     <div className="Color col-md-4">
                                         <label>Màu Sắc</label>
-                                        <select name="color" value={this.state.product.color} onChange={this.handleChange} id="select-by-color" className="selectpicker form-control">
+                                        <select name="color" value={this.state.product.color} onChange={this.handleChange} className="selectpicker form-control">
                                             {
                                                 data.color !== undefined && data.color.map(item => <option name={item} key={item}>{item}</option>)
                                             }
@@ -98,69 +119,61 @@ export default class ProductDetailContent extends Component {
                                         ({addToCart}) =><div className="add-to-cart" onClick={()=>addToCart(this.state.product)}><span>Add to cart</span></div>
                                     }
                                 </CartContext.Consumer>
-                                {/* <div className="wishlist"><span>wishlist</span></div>
-                                <div className="compare"><span>Compare</span></div> */}
+                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <div id="exTab5" className="mtb_30">
+                        <div className="mtb_30">
                             <ul className="nav nav-tabs">
-                                <li className="active"> <a href="#1c" data-toggle="tab">Overview</a> </li>
-                                <li><a href="#2c" data-toggle="tab">Reviews (1)</a> </li>
-                                <li><a href="#3c" data-toggle="tab">Solution</a> </li>
+                                <li className={overviewClass} onClick={this.toggle}> <a href="#1c" data-toggle="tab">Tổng Quan</a> </li>
+                                <li className={commentClass} onClick={this.toggle}><a href="#2c" data-toggle="tab">Đánh Giá</a> </li>
                             </ul>
-                            <div className="tab-content ">
-                                <div className="tab-pane active" id="1c">
-                                    <p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p>
+                            <div className="tab-content">
+                                <div className={`tab-pane ${overviewClass}`}>
+                                    <p style={{paddingTop :'1rem'}}>
+                                        {data.overview}
+                                    </p>
                                 </div>
-                                <div className="tab-pane" id="2c">
+                                <div className={`tab-pane ${commentClass}`}>
                                     <form className="form-horizontal">
                                         <div id="review"></div>
-                                        <h4 className="mt_20 mb_30">Write a review</h4>
+                                        <h4 className="mt_20 mb_30">Cảm Nhận Của Bạn</h4>
                                         <div className="form-group required">
                                             <div className="col-sm-12">
-                                                <label className="control-label" for="input-name">Your Name</label>
-                                                <input name="name" value="" id="input-name" className="form-control" type="text" />
-                                            </div>
-                                        </div>
-                                        <div className="form-group required">
-                                            <div className="col-sm-12">
-                                                <label className="control-label" for="input-review">Your Review</label>
-                                                <textarea name="text" rows="5" id="input-review" className="form-control"></textarea>
-                                                <div className="help-block"><span className="text-danger">Note:</span> HTML is not translated!</div>
+                                                <label className="control-label">Bình Luận Của Bạn</label>
+                                                <textarea name="text" className="form-control"></textarea>
+                                                
                                             </div>
                                         </div>
                                         <div className="form-group required">
                                             <div className="col-md-6">
-                                                <label className="control-label">Rating</label>
-                                                <div className="rates"><span>Bad</span>
-                                                    <input name="rating" value="1" type="radio" />
-                                                    <input name="rating" value="2" type="radio" />
-                                                    <input name="rating" value="3" type="radio" />
-                                                    <input name="rating" value="4" type="radio" />
-                                                    <input name="rating" value="5" type="radio" />
-                                                    <span>Good</span>
-                                                </div>
+                                                <label className="control-label">Đánh Giá</label>
+                                                <StarsRating
+                                                    count={5}
+                                                    className="star"
+                                                    onChange={this.ratingChanged}
+                                                    size={24}
+                                                    color2={'#ffd700'}
+                                                />
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="buttons pull-right">
-                                                    <button type="submit" className="btn btn-md btn-link">Continue</button>
+                                                    <button type="submit" className="btn btn-md btn-link">Bình Luận</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                                <div className="tab-pane" id="3c">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.applied clearfix to the tab-content to rid of the gap between the tab and the content</p>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-                <SubRelatedProduct />
+                {/* <SubRelatedProduct /> */}
+                <SubHomeItem2 />
             </div>
 
         )

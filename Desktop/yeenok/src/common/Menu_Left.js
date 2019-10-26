@@ -19,7 +19,7 @@ export default class MenuLeft extends Component{
     render(){
         return (
             <div id="column-left" className="col-sm-4 col-lg-3 hidden-xs">
-                <div id="category-menu" className="navbar collapse in mb_40" aria-expanded="true" role="button">
+                <div id="category-menu" className="navbar collapse in mb_40" style={{lineHeight : '25px'}}>
                     <div className="nav-responsive">
                         <div className="heading-part">
                             <h2 className="main_title">Loại Sản Phẩm</h2>
@@ -32,7 +32,11 @@ export default class MenuLeft extends Component{
                     </div>
                 </div>
                 <div className="left_banner left-sidebar-widget mt_30 mb_40">
-                    <a href="#"><img src={require('../public/images/left1.jpg')} alt="Left Banner" className="img-responsive" /></a>
+                    <img
+                        src={require('../public/images/menuleft.jpg')}
+                        alt="Left Banner"
+                        className="img-responsive"
+                    />
                 </div>
             </div>
         

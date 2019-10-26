@@ -16,22 +16,32 @@ export default class Category extends Component {
     componentDidMount(){
         axios.get(`http://localhost:8080/product/search${this.props.location.search}`)
             .then(res => {
-                console.log(res.data.result);
                 this.setState({
                     data : res.data.result
                 })
             })
     }
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.location.search !== this.props.location.search){
+            axios.get(`http://localhost:8080/product/search${this.props.location.search}`)
+            .then(res => {
+                console.log(res.data.result);
+                this.setState({
+                    data : res.data.result
+                })
+            })
+    }}
     render() {
 
         return (
-            <div class="wrapper">
+            <div className="wrapper">
                 <Header />
-                <div class="container">
-                    <div class="row ">
+                <div className="container">
+                    <div className="row ">
                         <Redirect redirect="Search"/>
                         <MenuLeft />
                         {
+                            
                             this.state.data.length > 0 && <CategoryContent data ={this.state.data}/>
                         }
                     </div>

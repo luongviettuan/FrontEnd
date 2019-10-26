@@ -6,7 +6,7 @@ class CartSum extends Component{
         super()
         this.state = {
             listItems : [],
-            total :''
+            sum :''
         }
     }
     convertJson(listItems) {
@@ -16,17 +16,23 @@ class CartSum extends Component{
                 (S, item) => S = S + item.unit * item.price
             ),0)
         
-        this.setState({total : temp})
+        this.setState({sum : temp})
         
     }
+    
     componentDidMount(){
         this.convertJson(this.props.cartItems);
     }
     render(){
-        const {total} = this.state
+        const {sum} = this.state
         
         return(
-           <td className="text-right">{total} VNĐ</td>
+            
+            <td className="text-right">
+               
+                {sum +' VNĐ'}
+            </td>
+           
         )
     }
 }
