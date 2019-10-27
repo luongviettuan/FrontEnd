@@ -3,6 +3,34 @@ const md5 = require('md5')
 const jwt = require('jsonwebtoken');
 const UserUtil = require('../util/User.Util')
 
+
+module.exports.getAllUser= (req, res, next) =>{
+    let sql = 'select * from User';
+    conn.query(sql, (err, rs)=>{
+        if(err) throw err;
+        else{
+            res.json({
+                code : 200,
+                result : rs
+            })
+        }
+    })
+}
+
+module.exports.findUser = (req, res, next) =>{
+    let q = req.body.q; 
+    let sql = `SELECT * FROM User WHERE CONCAT(full_name, username, phone_number) LIKE "%${q}%"`
+    conn.query(sql, (err, rs)=>{
+        if(err) throw err;
+        else{
+            res.json({
+                code : 200,
+                result :rs
+            })
+        }
+    })
+}
+
 module.exports.postLogin = (req, res, next) =>{
     let username = req.body.username
     let password = req.body.password
