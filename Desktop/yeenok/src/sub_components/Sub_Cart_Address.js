@@ -34,12 +34,12 @@ class SubCartAddress extends Component{
                 }
             ).then(res=>{
                 this.setState({
-                    district : res.data.result
+                    district : res.data.result,
                 })
             })
         }
         if(district_id !== prevState.district_id){
-            this.props.addToAddress(district_id)
+            this.props.addToAddress(province_id, district_id)
         }
     }
     componentDidMount(){

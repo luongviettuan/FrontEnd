@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import SubRelatedProduct from '../sub_components/Sub_Related_Product';
 import {CartContext} from '../context/Cart.Context'
 import ClassNames from 'classnames';
-import StarsRating from 'stars-rating';
 import SubHomeItem2 from '../sub_components/Sub_Home_Item2'
+import SubProductDetailComment from '../sub_components/Sub_ProductDetail_Comment';
 export default class ProductDetailContent extends Component {
     constructor(props){
         super(props);
@@ -21,9 +20,6 @@ export default class ProductDetailContent extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.toggle = this.toggle.bind(this)
-    }
-    ratingChanged = (newRating) => {
-        console.log(newRating)
     }
     toggle() {
         this.setState(
@@ -44,9 +40,7 @@ export default class ProductDetailContent extends Component {
         })
     }
     render() {
-
         const data = this.props.data
-
         let overviewClass = ClassNames({
             'active': this.state.active
         })
@@ -138,41 +132,15 @@ export default class ProductDetailContent extends Component {
                                     </p>
                                 </div>
                                 <div className={`tab-pane ${commentClass}`}>
-                                    <form className="form-horizontal">
-                                        <div id="review"></div>
-                                        <h4 className="mt_20 mb_30">Cảm Nhận Của Bạn</h4>
-                                        <div className="form-group required">
-                                            <div className="col-sm-12">
-                                                <label className="control-label">Bình Luận Của Bạn</label>
-                                                <textarea name="text" className="form-control"></textarea>
-                                                
-                                            </div>
-                                        </div>
-                                        <div className="form-group required">
-                                            <div className="col-md-6">
-                                                <label className="control-label">Đánh Giá</label>
-                                                <StarsRating
-                                                    count={5}
-                                                    className="star"
-                                                    onChange={this.ratingChanged}
-                                                    size={24}
-                                                    color2={'#ffd700'}
-                                                />
-                                            </div>
-                                            <div className="col-md-6">
-                                                <div className="buttons pull-right">
-                                                    <button type="submit" className="btn btn-md btn-link">Bình Luận</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    {
+                                        data.product_id && <SubProductDetailComment product_id={data.product_id}/>
+                                    }
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <SubRelatedProduct /> */}
                 <SubHomeItem2 />
             </div>
 

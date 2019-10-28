@@ -8,6 +8,9 @@ export class CartProvider extends Component{
         super(props);
         this.state = {
             cartItems : Object.entries(localStorage),
+            province_id :'',
+            district_id :'',
+            voucher_id : '',
             sum_monney : 0,
             ship_fee : 0,
             discount : 0,
@@ -50,14 +53,15 @@ export class CartProvider extends Component{
                     temp = 0
                 }
                 this.setState({
-                    discount : temp
+                    discount : temp,
+                    voucher_id :voucher_id
                 })
             }).catch(err =>
                 console.error(err)    
             )
         }
     }
-    addToAddress(district_id){
+    addToAddress(province_id, district_id){
         if(district_id){
             axios.post('http://localhost:8080/get_api_GHN',
                 {
@@ -65,13 +69,15 @@ export class CartProvider extends Component{
                 }
             ).then(res =>{
                 this.setState({
-                    ship_fee : res.data.result
+                    ship_fee : res.data.result,
+                    province_id: province_id,
+                    district_id :district_id
                 })
             })
         }
     }
     componentDidUpdate(prevProps, prevState){
-        const {sum_monney, ship_fee, discount} = this.state
+        const {sum_monney, ship_fee, discount, cartItems} = this.state
         if(sum_monney!==prevState.sum_monney
             || ship_fee !== prevState.ship_fee 
             || discount!==prevState.discount){
@@ -79,14 +85,27 @@ export class CartProvider extends Component{
                 total : parseInt(sum_monney) + parseInt(ship_fee) - parseInt(discount)
             })
         }
+        if(cartItems !== prevState.cartItems){
+            this.caculator(cartItems)
+        }
+    }
+    componentWillMount(){
+        const {cartItems} = this.state
+        this.caculator(cartItems)
     }
     componentDidMount(){
-        this.caculator(this.state.cartItems)
+        const {sum_monney, ship_fee, discount} = this.state
+        this.setState({
+            total : parseInt(sum_monney) + parseInt(ship_fee) - parseInt(discount)
+        })
     }
     render(){
         return <CartContext.Provider 
             value={{
                 cartItems : this.state.cartItems,
+                province_id : this.state.province_id,
+                district_id : this.state.district_id,
+                voucher_id : this.state.voucher_id,
                 sum_monney : this.state.sum_monney,
                 ship_fee : this.state.ship_fee,
                 discount : this.state.discount,

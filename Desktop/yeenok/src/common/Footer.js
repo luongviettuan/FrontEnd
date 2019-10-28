@@ -66,7 +66,7 @@ export default class Footer extends Component{
                             </ul>
                         </div>
                         <div className="col-md-3 footer-block">
-                            <h6 className="footer-title pt_20">Contacts</h6>
+                            <h6 className="footer-title ptb_20">Liên Hệ</h6>
                             <ul>
                                 <IconContext.Provider value={{style:{marginBottom: '-1px', marginRight: '5px'}}}>
                                     <li><FaHome />Số Nhà 4C, Phố Nguyễn Văn Trỗi, Quận Hà Đông, TP Hà Nội</li>

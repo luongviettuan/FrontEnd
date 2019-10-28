@@ -40,6 +40,7 @@ class LoginForm extends Component{
             if(res.data.token){
                 const { cookies } = this.props;
                 cookies.set('token', res.data.token);
+                cookies.set('user_id', res.data.user_id)
                 cookies.set('name', res.data.full_name);
                 this.setState({
                     redirect: true
