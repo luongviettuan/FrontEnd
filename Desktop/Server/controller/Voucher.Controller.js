@@ -11,6 +11,19 @@ module.exports.getAllVoucher = (req, res, next) => {
         }
     })
 }
+module.exports.findVoucher = (req, res, next)=>{
+    let {q} = req.body;
+    let sql = `select * from Voucher where concat(voucher_id, voucher_name) like "%${q}%"`
+    conn.query(sql, (err, rs)=>{
+        if(err) throw err;
+        else{
+            res.json({
+                code: 200,
+                result: rs 
+            })
+        }
+    })
+}
 module.exports.getVoucherByName = (req,res, next)=>{
     const voucher_id = req.body.voucher_id;
     let sql = `SELECT * FROM Voucher WHERE voucher_id = "${voucher_id}"`;

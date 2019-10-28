@@ -39,29 +39,33 @@ app.use('/voucher', VoucherRouter)
 const LocaltionRouter = require('./router/Location.Router');
 app.use('/location',LocaltionRouter)
 
-app.use((req, res, next)=>{
-    const token =
-    req.body.token ||
-    req.query.token ||
-    req.headers['x-access-token'] ||
-    req.cookies.token;
-    console.log(token);
+const ColorRouter = require('./router/Color.Router');
+app.use('/color', ColorRouter)
+
+
+// app.use((req, res, next)=>{
+//     const token =
+//     req.body.token ||
+//     req.query.token ||
+//     req.headers['x-access-token'] ||
+//     req.cookies.token;
+//     console.log(token);
     
-    if (!token) {
-        res.status(401).send('Unauthorized: No token provided');
-        return;
-    } else {
-        jwt.verify(token, 'queenok', function(err, decoded) {
-          if (err) {
-            res.status(401).send('Unauthorized: Invalid token');
-            return;
-          } else {
-            req.username = decoded.username;
-            next();
-          }
-        });
-    }
-})
+//     if (!token) {
+//         res.status(401).send('Unauthorized: No token provided');
+//         return;
+//     } else {
+//         jwt.verify(token, 'queenok', function(err, decoded) {
+//           if (err) {
+//             res.status(401).send('Unauthorized: Invalid token');
+//             return;
+//           } else {
+//             req.username = decoded.username;
+//             next();
+//           }
+//         });
+//     }
+// })
 
 
 

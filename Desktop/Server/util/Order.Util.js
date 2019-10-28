@@ -13,4 +13,12 @@ OrderUtil.exitsOrderId = function(orderId){
         })
     })
 }
+OrderUtil.jsonToObject = function(cartItems){
+    let cart = []
+    cartItems.map(item => {
+        let temp = JSON.parse(item[1]);
+        cart = [...cart, temp]
+    })
+    return cart;
+}
 module.exports = OrderUtil;
