@@ -75,3 +75,19 @@ module.exports.getOrderByUser = (req, res, next) =>{
         }
     })
 }
+module.exports.getProductByOrder = (req,res, next)=>{
+    const {order_id} = req.body;
+    let sql = `SELECT quatity, OrderLine.size, OrderLine.color, product_name FROM OrderLine`
+            + ` inner join Product`
+            + ` on Product.product_id = OrderLine.product_id`
+            + ` where order_id = "${order_id}"`;
+    conn.query(sql, (err,rs)=>{
+        if(err) throw err;
+        else{
+            res.json({
+                code : 200,
+                result : rs
+            })
+        }
+    })
+}

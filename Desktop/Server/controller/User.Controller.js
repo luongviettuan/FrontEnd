@@ -53,11 +53,11 @@ module.exports.postLogin = (req, res, next) =>{
     })
 }
 module.exports.PostRegister = async (req, res, next)=>{
-    let full_name = await req.body.fullName;
-    let phone_number = await req.body.phoneNumber;
-    let province_id = await req.body.provinceId;
-    let district_id = await req.body.districtId;
-    let address_detail = await req.body.addressDetail;
+    let full_name = await req.body.fullName || req.body.full_name;
+    let phone_number = await req.body.phoneNumber || req.body.phone_number;
+    let province_id = await req.body.provinceId || req.body.province_id;
+    let district_id = await req.body.districtId || req.body.district_id;
+    let address_detail = await req.body.addressDetail || req.body.address_detail;
     let username = await req.body.username;
     let hashedPassword = await md5(req.body.password);
     let checkUsername = await UserUtil.checkUsername(username)
