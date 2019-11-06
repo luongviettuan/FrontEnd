@@ -47,3 +47,49 @@ module.exports.createColor = async (req, res, next) =>{
         })
     }
 }
+module.exports.getInfoColor = (req, res, next)=>{
+    const {color_id} =  req.body;
+    if(color_id){
+        let sql = `SELECT * FROM Color WHERE color_id = ${color_id};`;
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    result: rs[0]
+                })
+            }
+        })
+    }
+}
+module.exports.updateInfoColor = (req,res, next)=>{
+    const {color_id, color_name} = req.body
+    if(color_id && color_name){
+        let sql = `UPDATE Color SET color_name = '${color_name}' WHERE color_id = '${color_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Cập Nhật Màu Sắc Thành Công'
+                })
+            }
+        })
+    }
+    
+}
+module.exports.deleteInfoColor = (req, res, next) =>{
+    const {color_id} = req.body
+    if(color_id){
+        sql = `DELETE FROM Color WHERE color_id = '${color_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Xoá Thông Tin Màu Sắc Thành Công'
+                })
+            }
+        })
+    }
+}

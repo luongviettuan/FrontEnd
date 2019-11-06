@@ -70,3 +70,58 @@ module.exports.createCategory = async (req, res, next) =>{
         })
     }
 }
+module.exports.getInfoCategory = (req, res, next)=>{
+    const {category_id} =  req.body;
+    if(category_id){
+        let sql = `SELECT * FROM Category WHERE category_id = ${category_id};`;
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    result: rs[0]
+                })
+            }
+        })
+    }
+}
+module.exports.updateInfoCategory = (req, res,next)=>{
+    const {category_id, category_name} =req.body
+    console.log(category_id, category_name);
+    if(category_id && category_name){
+        let sql = `UPDATE Category SET category_name = '${category_name}' WHERE category_id = '${category_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Cập Nhật Loại Sản Phẩm Thành Công'
+                })
+            }
+        })
+    }
+}
+module.exports.deleteInfoCategory = async (req, res, next)=>{
+    const {category_id} = req.body;
+    let checkNumberProductOfCategory = await CategoryUtil.checkNumberProductOfCategory(category_id);
+    if(checkNumberProductOfCategory !== 0){
+        res.json({
+            code: 403,
+            message: `Vui Lòng Xoá ${checkNumberProductOfCategory} Sản Phẩm Của Loại Sản Phẩm Này Trước Khi Thực Hiện`
+        })
+    }
+    else{
+        if(category_id){
+            sql = `DELETE FROM Category WHERE category_id = '${category_id}';`
+            conn.query(sql, (err, rs)=>{
+                if(err) throw err;
+                else{
+                    res.json({
+                        code: 200,
+                        message: 'Xoá Thông Tin Loại Sản Phẩm Thành Công'
+                    })
+                }
+            })
+        }
+    }
+}

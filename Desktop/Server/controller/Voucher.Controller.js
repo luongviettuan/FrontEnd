@@ -68,3 +68,52 @@ module.exports.createVoucher = async (req, res, next)=>{
     }
 
 }
+module.exports.getInfoVoucher = (req, res, next)=>{
+    let {voucher_id} = req.body;
+    if(voucher_id){
+        let sql = `select * from Voucher where voucher_id = '${voucher_id}'`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    result: rs[0]
+                })
+            }
+        })
+    }
+}
+module.exports.updateInfoVoucher = (req,res, next)=>{
+    const {voucher_id, voucher_name, discount, unit} = req.body
+    if(voucher_id && voucher_name && discount && unit){
+        let sql = `UPDATE Voucher SET voucher_id = '${voucher_id}',`
+            +` voucher_name = '${voucher_name}',`
+            +` unit = '${unit}',`
+            +` discount = '${discount}'`
+            +`WHERE voucher_id = '${voucher_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Cập Nhật Mã Giảm Giá Thành Công'
+                })
+            }
+        })
+    }
+}
+module.exports.deleteInfoColor = (req, res, next) =>{
+    const {voucher_id} = req.body
+    if(voucher_id){
+        sql = `DELETE FROM Voucher WHERE voucher_id = '${voucher_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Xoá Thông Tin Mã Giảm Giá Thành Công'
+                })
+            }
+        })
+    }
+}
