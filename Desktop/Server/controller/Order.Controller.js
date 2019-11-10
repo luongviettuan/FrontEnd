@@ -91,3 +91,44 @@ module.exports.getProductByOrder = (req,res, next)=>{
         }
     })
 }
+module.exports.findInfoOrder = (req, res, next)=>{
+    const {q} = req.body;
+    let sql = `SELECT * FROM queenok.Order`
+        +` where order_id like "${q}%"`
+    conn.query(sql, (err, rs)=>{
+        if(err) throw err;
+        else{
+            res.json({
+                code: 200,
+                result: rs
+            })
+        }
+    })
+    
+}
+module.exports.updateInfoOrder = (req, res, next)=>{
+    const listUpdateOrder = req.body;
+    Promise.all([
+        listUpdateOrder.map(order=>
+            new Promise((resolve, reject)=>{
+                let sql = `UPDATE queenok.Order SET status = '${order.status}' WHERE order_id = '${order.order_id}';`;
+                conn.query(sql, (err, rs)=>{
+                    if(err) reject(err)
+                    else{
+                        resolve(rs)
+                    }
+                })
+            })   
+        )
+    ]).then(rs => { 
+        res.json({
+            code: 200,
+            message: 'Cập Nhật Danh Sách Đơn Hàng Thành Công'
+        });
+      }).catch(err => { 
+        res.json({
+            code: 403,
+            message: 'Có Lỗi Sảy Ra, Vui Lòng Thử Lại Sau'
+        })
+      });
+}

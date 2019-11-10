@@ -28,19 +28,21 @@ module.exports.getAllCommentOfProduct = async (req,res,next) => {
 }
 module.exports.postNewReview = (req, res, next) =>{
     const {user_id, product_id, comment, rate_star} = req.body
-    const date = HelpUtil.dateToString();
-    let sql = `Insert into ProductReview`
-        + ` (user_id, product_id, comment, rate_star, date) VALUES`
-        + ` ("${user_id}", "${product_id}", "${comment}", "${rate_star}", "${date}")`;
+    if(user_id && product_id && comment && rate_star){
+        const date = HelpUtil.dateToString();
+        let sql = `Insert into ProductReview`
+            + ` (user_id, product_id, comment, rate_star, date) VALUES`
+            + ` ("${user_id}", "${product_id}", "${comment}", "${rate_star}", "${date}")`;
 
-    conn.query(sql, (err, rs)=>{
-        if(err) throw err;
-        else(
-            res.json({
-                code : 200,
-                messege : 'Bình Luận Thành Công'
-            })
-        )
-    })
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else(
+                res.json({
+                    code : 200,
+                    messege : 'Bình Luận Thành Công'
+                })
+            )
+        })
+    }
     
 }

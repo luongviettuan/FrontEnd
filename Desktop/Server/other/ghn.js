@@ -5,9 +5,9 @@ const axios = require('axios');
 router.post('/', async (req, res, next)=>{
     const district_id = parseInt(req.body.district_id)
     const shipFee = await new Promise((resolve, reject)=>{
-        axios.post('https://dev-online-gateway.ghn.vn/apiv3-api/api/v1/apiv3/FindAvailableServices',
+        axios.post('https://console.ghn.vn/api/v1/apiv3/FindAvailableServices',
             {
-                token: "TokenStaging",
+                token: "5dab3331bfbf643f1c0860e6",
                 Weight: 300,
                 Length: 25,
                 Width: 15,

@@ -1,5 +1,6 @@
-const conn = require('../model/config')
-const HelpUtil = require('../util/Help.Util')
+const conn = require('../model/config');
+const HelpUtil = require('../util/Help.Util');
+const ProductUtil = require('../util/Product.Util');
 module.exports.getAllProduct = (req, res, next) => {
     let sql = "select * from Product"
         + " inner join Brand"
@@ -58,4 +59,74 @@ module.exports.getProductById = (req, res, next) => {
 
         }
     })
+}
+module.exports.createInfoProduct = (req, res,next)=>{
+   const objData = ProductUtil.hashObject(req.body);
+   if(objData){
+        sql = `INSERT INTO Product (product_name, product_image_url, price, brand_id, category_id, status, description, size, color, overview)`
+            +` VALUES ('${objData.product_name}', '${objData.product_image_url}', '${objData.price}', '${objData.brand_id}', '${objData.category_id}', '${objData.status}', '${objData.description}', '${objData.size}', '${objData.color}', '${objData.overview}');`;
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Thêm Thông Tin Sản Phẩm Thành Công'
+                })
+            }
+        })
+
+    }
+}
+
+module.exports.updateInfoProduct =(req, res, next) =>{
+    const objData = ProductUtil.hashObject(req.body);
+    if(objData){
+        let sql = `UPDATE Product SET`
+                +` product_name = '${objData.product_name}',`
+                +` product_image_url = '${objData.product_image_url}',`
+                +` price = '${objData.price}',`
+                +` brand_id = '${objData.brand_id}',`
+                +` category_id = '${objData.category_id}',`
+                +` status = '${objData.status}',`
+                +` description = '${objData.description}',`
+                +` size = '${objData.size}',`
+                +` color = '${objData.color}',`
+                +` overview = '${objData.overview}'`
+                +` WHERE product_id = '${objData.product_id}';`
+
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Cập Nhật Thông Tin Sản Phẩm Thành Công'
+                })
+            }
+        })
+
+    }
+    
+}
+module.exports.deleteInfoProduct = async (req, res,next)=>{
+    const {product_id} = req.body;
+    let check_product_id = await ProductUtil.checkProductInOrder(product_id)
+    if(check_product_id > 0){
+        res.json({
+            code: 403,
+            message: 'Sản Phẩm Đang Tồn Tại Trong Đơn Hàng, Không Thể Xoá'
+        })
+    }
+    else{
+        let sql = `DELETE FROM Product WHERE product_id = '${product_id}';`
+        conn.query(sql, (err, rs)=>{
+            if(err) throw err;
+            else{
+                res.json({
+                    code: 200,
+                    message: 'Xoá Thông Tin Sản Phẩm Thành Công'
+                })
+            }
+        })
+    }
+    
 }
