@@ -15,6 +15,8 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use('/admin', require('./router/AuthAdmin.Router'))
+
 const GHN = require('./other/ghn')
 app.use('/get_api_GHN', GHN)
 
