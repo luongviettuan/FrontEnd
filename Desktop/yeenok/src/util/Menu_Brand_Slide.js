@@ -18,13 +18,13 @@ export default class MenuBrandSlide extends Component {
       <div>
         <Slider {...settings}>
           <div className="item active">
-            <a href="#"><img src={require("../public/images/menu-banner1.jpg")} className="img-responsive" alt="Banner1" /></a>
+            <img src={require("../public/images/menu-banner1.jpg")} className="img-responsive" alt="Banner1" />
           </div>
           <div className="item">
-            <a href="#"><img src={require("../public/images/menu-banner2.jpg")} className="img-responsive" alt="Banner1" /></a>
+            <img src={require("../public/images/menu-banner2.jpg")} className="img-responsive" alt="Banner1" />
           </div>
           <div className="item">
-            <a href="#"><img src={require("../public/images/menu-banner3.jpg")} className="img-responsive" alt="Banner1" /></a>
+            <img src={require("../public/images/menu-banner3.jpg")} className="img-responsive" alt="Banner1" />
           </div>
         </Slider>
       </div>

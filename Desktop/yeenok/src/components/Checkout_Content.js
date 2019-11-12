@@ -3,14 +3,37 @@ import {Table} from 'reactstrap';
 import {withCookies } from 'react-cookie';
 import {Button} from 'reactstrap';
 import Axios from 'axios';
+import ProductDetailCartModal from '../util/Product_Detail_Cart_Modal';
+
 class CheckoutContent extends Component {
     constructor(props){
         super(props);
         const {cookies} = props
         this.state ={
             user_id : cookies.get('user_id') || '',
-            listOrder : []
+            listOrder : [],
+            listProductOfOrder : [],
+            modal : false
         }
+        this.handleWatchOrder = this.handleWatchOrder.bind(this);
+        this.turnOffModal = this.turnOffModal.bind(this)
+    }
+    handleWatchOrder(order_id){
+        Axios.post('http://localhost:8080/order/get_product_by_order', {order_id : order_id})
+            .then(res=>{
+                if(res.data.code === 200){
+                    const listProductOfOrder = res.data.result
+                    this.setState({
+                        listProductOfOrder : listProductOfOrder,
+                        modal : true 
+                    })
+                }
+            })
+    }
+    turnOffModal() {
+        this.setState({
+            modal: false
+        });
     }
     componentDidMount(){
         const {user_id} = this.state
@@ -30,15 +53,16 @@ class CheckoutContent extends Component {
         })
     }
     render() {
-        const {listOrder} = this.state
+
+        const {listOrder, modal, listProductOfOrder} = this.state
         const style = {
             padding: '1px 5px',
             background: 'green',
             fontSize: '10px'
         }
         return (
-            <div class="col-sm-8 col-lg-9 mtb_20">
-                <div class="panel-group">
+            <div className="col-sm-8 col-lg-9 mtb_20">
+                <div className="panel-group">
                     <Table striped>
                         <thead>
                             <tr>
@@ -56,7 +80,7 @@ class CheckoutContent extends Component {
                                         <th scope="row">{index+1}</th>
                                         <td>{order.order_id}</td>
                                         <td>
-                                            <Button style={style}>Xem Chi Tiết</Button>
+                                            <Button style={style} onClick={()=>this.handleWatchOrder(order.order_id)}>Xem Chi Tiết</Button>
                                         </td>
                                         <td>{order.total + ' VNĐ'}</td>
                                         <td>{order.status}</td>
@@ -67,6 +91,11 @@ class CheckoutContent extends Component {
                         </tbody>
                     </Table>
                 </div>
+                <ProductDetailCartModal
+                    modal={modal}
+                    listProductOfOrder={listProductOfOrder}
+                    turnOffModal = {this.turnOffModal}
+                />
             </div>
 
         )

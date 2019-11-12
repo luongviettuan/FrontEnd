@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from 'reactstrap';
 import {CartContext} from '../context/Cart.Context'
 import ClassNames from 'classnames';
 import SubHomeItem2 from '../sub_components/Sub_Home_Item2'
@@ -122,8 +123,12 @@ export default class ProductDetailContent extends Component {
                     <div className="col-md-12">
                         <div className="mtb_30">
                             <ul className="nav nav-tabs">
-                                <li className={overviewClass} onClick={this.toggle}> <a href="#1c" data-toggle="tab">Tổng Quan</a> </li>
-                                <li className={commentClass} onClick={this.toggle}><a href="#2c" data-toggle="tab">Đánh Giá</a> </li>
+                                <li className={overviewClass} onClick={this.toggle}>
+                                    <Button color="success">Tổng Quan</Button>{' '}
+                                </li>
+                                <li className={commentClass} onClick={this.toggle}>
+                                    <Button color="info">Đánh Giá</Button>{' '}
+                                </li>
                             </ul>
                             <div className="tab-content">
                                 <div className={`tab-pane ${overviewClass}`}>

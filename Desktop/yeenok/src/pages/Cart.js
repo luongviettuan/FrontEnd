@@ -5,7 +5,7 @@ import MenuLeft from '../common/Menu_Left';
 import CartContent from '../components/Cart_Content';
 import Brand from '../common/Brand';
 import Footer from '../common/Footer';
-// import {VoucherProvider} from '../context/Voucher.Context'
+
 export default class Cart extends Component{
     render(){
         return (

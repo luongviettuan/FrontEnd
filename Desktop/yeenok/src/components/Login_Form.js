@@ -3,7 +3,7 @@ import NotificationModal from '../util/Notification_Modal'
 import {Link, Redirect} from "react-router-dom";
 
 import axios from'axios';
-import {withCookies, Cookies } from 'react-cookie';
+import {withCookies } from 'react-cookie';
 
 class LoginForm extends Component{
     constructor(props){

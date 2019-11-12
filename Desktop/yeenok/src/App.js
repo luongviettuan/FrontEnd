@@ -5,9 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import Login from'./pages/Login';
 import Regitster from './pages/Regitster'
-import About from './pages/About';
 import Cart from './pages/Cart';
-import BlogDetail from './pages/BlogDetail';
 import Category from './pages/Category';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
@@ -24,7 +22,6 @@ function App() {
             <Switch>
               <Route path="/productdetail/:id"  component={ProductDetail} />
               <Route path="/" exact component={Home} />
-              <Route path="/about"  component={About} />
               <Route path="/cart"  component={Cart} />
               <Route path="/category/:id"  component={Category} />
               <Route path="/category"  component={Category} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { withCookies, Cookies } from 'react-cookie';
+import { withCookies } from 'react-cookie';
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
 import {CartContext} from '../context/Cart.Context'
 import CommonSearch from '../components/Common_Search';
@@ -115,7 +115,7 @@ class Header extends Component {
                                         </ul>
                                     </li>
                                     <li><span><Link to='/'>Xu Hướng Mới</Link></span></li>
-                                    <li><span><Link to='/'>Liên Hệ</Link></span></li>
+                                    <li><span><Link to='/contact'>Liên Hệ</Link></span></li>
                                     <li className="dropdown"><span><Link to="/">Trang</Link></span>
                                         <ul className="dropdown-menu">
                                             <Link to="/cart"><li className="change_color_li"><span>Giỏ Hàng</span></li></Link>

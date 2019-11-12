@@ -34,19 +34,20 @@ class CartContent extends Component {
             total,
             cartItems
         } = this.props
-        Axios.post('http://localhost:8080/order/create_order',
-            {
-                user_id,
-                province_id,
-                district_id,
-                voucher_id,
-                total,
-                cartItems
-            }
-        ).then((res)=>{
-            console.log(res.data.code)
-            
-        })
+        if(user_id !== ""){
+            Axios.post('http://localhost:8080/order/create_order',
+                {
+                    user_id,
+                    province_id,
+                    district_id,
+                    voucher_id,
+                    total,
+                    cartItems
+                }
+            ).then((res)=>{
+                console.log(res.data.code)
+            })
+        }
     }
 
     toggle() {
@@ -78,7 +79,7 @@ class CartContent extends Component {
                             <th>Tên Sản Phẩm</th>
                             <th>Phân Loại</th>
                             <th>Số Lượng</th>
-                            <th>Đơn Vị Giá (VNĐ)</th>
+                            <th>Đơn Giá</th>
                             <th>Thành Tiền</th>
                         </tr>
                     </thead>
@@ -127,9 +128,10 @@ class CartContent extends Component {
                     <ModalFooter>
                         <Link to="/checkout" onClick={this.handleSendData}>
                             <Button>
-                                Đặt Hàng
+                                Đặt Hàng 
                             </Button>
                         </Link>
+                        {' '}
                         <Button onClick={this.turnOffModal}>
                             Huỷ
                         </Button>

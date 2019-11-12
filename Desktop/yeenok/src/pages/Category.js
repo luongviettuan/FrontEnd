@@ -33,10 +33,10 @@ export default class Category extends Component {
     }
     render() {
         return (
-            <div class="wrapper">
+            <div className="wrapper">
                 <Header />
-                <div class="container">
-                    <div class="row ">
+                <div className="container">
+                    <div className="row ">
                         <Redirect redirect="category"/>
                         <MenuLeft />
                         <CategoryContent data ={this.state.data}/>

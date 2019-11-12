@@ -34,7 +34,7 @@ export default class LoginForm extends Component{
             })
     }
     handleChange(event){
-        if(this.refs.province_ref.value != ""){
+        if(this.refs.province_ref.value !== ""){
             axios.post("http://localhost:8080/location/province",
                         {province_id : this.refs.province_ref.value}
                     )
@@ -128,11 +128,11 @@ export default class LoginForm extends Component{
                                             </div>
                                             <div className="form-group">
                                                 <label>Mật Khẩu</label>
-                                                <input type="password" name="password" tabIndex="2" className="form-control" placeholder="Nhập Mật Khẩu" onChange={this.handleChange} value={this.state.password} />
+                                                <input type="password" name="password" tabIndex="2" className="form-control" placeholder="Nhập Mật Khẩu" onChange={this.handleChange} value={this.state.password} autoComplete="password"/>
                                             </div>
                                             <div className="form-group">
                                                 <label>Nhập Lại Mật Khẩu</label>
-                                                <input type="password" name="confirmPassword" tabIndex="2" className="form-control" placeholder="Xác Nhận Mật Khẩu" onChange={this.handleChange} value={this.state.confirmPassword}/>
+                                                <input type="password" name="confirmPassword" tabIndex="2" className="form-control" placeholder="Xác Nhận Mật Khẩu" onChange={this.handleChange} value={this.state.confirmPassword} autoComplete="password"/>
                                             </div>
                                             <div className="form-group">
                                                 <div className="row">

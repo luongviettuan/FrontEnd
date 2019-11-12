@@ -1,5 +1,7 @@
-import React, {Component} from 'react'
-import {withCart} from '../context/Cart.Context'
+import React, {Component} from 'react';
+import { IconContext } from "react-icons";
+import {FaRegTrashAlt} from 'react-icons/fa'
+import {withCart} from '../context/Cart.Context';
 
 class CartListItems extends Component{
     constructor(props){
@@ -7,11 +9,18 @@ class CartListItems extends Component{
         this.state = {
             listItems : []
         }
+        
     }
     convertJson(listItems) {
         const arr = listItems.map(item => JSON.parse(item[1]))
         this.setState({listItems : [...arr]})
         
+    }
+    componentDidUpdate(prevProps, prevState){
+        const {cartItems} = this.props
+        if(cartItems !== prevProps.cartItems){
+            this.convertJson(cartItems);
+        }
     }
     componentDidMount(){
         this.convertJson(this.props.cartItems);
@@ -20,8 +29,8 @@ class CartListItems extends Component{
         const {listItems} = this.state
         const textMiddle = {
             verticalAlign: 'middle'
-        } 
-        
+        }
+        const {removeFromCart} = this.props;
         return(
             
                 listItems.length > 0 && listItems.map(item =>
@@ -35,10 +44,14 @@ class CartListItems extends Component{
                             />
                         </td>
                         <td style={textMiddle}>{item.product_name}</td>
-                        <td style={textMiddle} className="text-center">{item.size}-{item.color}</td>
-                        <td style={textMiddle} className="text-center">{item.unit}</td>
-                        <td style={textMiddle} className="text-center">{item.price}</td>
-                        <td style={textMiddle} className="text-center">{item.price*item.unit}</td>
+                        <td style={textMiddle}>{item.size}-{item.color}</td>
+                        <td style={textMiddle}>{item.unit}
+                                <IconContext.Provider value={{ color: "red", style:{fontSize: '15px', marginLeft: '10px'} }}>
+                                    <FaRegTrashAlt onClick={()=>removeFromCart(item.product_id)} />
+                                </IconContext.Provider>
+                        </td>
+                        <td style={textMiddle}>{item.price}</td>
+                        <td style={textMiddle}>{item.price*item.unit}</td>
                     </tr>
                 )
             

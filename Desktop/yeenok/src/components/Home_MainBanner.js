@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import axios from'axios';
 import {Link}  from 'react-router-dom';
 export default class HomeBanner extends Component{
     constructor(props){
@@ -41,7 +40,7 @@ export default class HomeBanner extends Component{
                             <div className="col-xs-4 mt_10">
                                 <div id="subbanner3" className="sub-hover">
                                     <div className="sub-img">
-                                        <a href="#"><img src={require( '../public/images/sub3.jpg')} alt="Sub Banner3" className="img-responsive" /></a>
+                                        <Link to='/'><img src={require( '../public/images/sub3.jpg')} alt="Sub Banner3" className="img-responsive" /></Link>
                                     </div>
                                 </div>
                             </div>

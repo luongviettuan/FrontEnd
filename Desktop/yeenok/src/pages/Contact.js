@@ -8,10 +8,10 @@ import Footer from '../common/Footer';
 export default class Contact extends Component {
     render(){
         return(
-            <div class="wrapper">
+            <div className="wrapper">
                 <Header />
-                <div class="container">
-                    <div class="row ">
+                <div className="container">
+                    <div className="row ">
                         <Redirect redirect="Contact"/>
                         <MenuLeft />
                         <ContactForm />

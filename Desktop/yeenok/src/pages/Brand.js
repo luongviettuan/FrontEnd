@@ -32,13 +32,11 @@ export default class Brand_Show extends Component {
         }
     }
     render() {
-        console.log("11111111111111111111111111111111111",this.props.match.params.id);
-        
         return (
-            <div class="wrapper">
+            <div className="wrapper">
                 <Header />
-                <div class="container">
-                    <div class="row ">
+                <div className="container">
+                    <div className="row ">
                         <Redirect redirect="Brand"/>
                         <MenuLeft />
                         <CategoryContent data ={this.state.data}/>

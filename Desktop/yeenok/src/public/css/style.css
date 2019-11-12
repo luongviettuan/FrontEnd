@@ -2817,3 +2817,11 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .star{
     padding: 0.5rem
 }
+.product-thumb .price{
+    color: #494b4c;
+    display: inline-block;
+    font: 400 20px/20px "Josefin+Sans";
+    margin-top: 5px;
+    vertical-align: middle;
+    font-size: 18px;
+}

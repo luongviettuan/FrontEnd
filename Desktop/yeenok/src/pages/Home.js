@@ -12,8 +12,6 @@ import HomeBanner from '../components/Home_MainBanner';
 import HomeItem from '../components/Home_Item';
 import HomeRes from '../components/Home_Res';
 import Footer from '../common/Footer';
-import HomeCustom from '../components/Home_Custom';
-import Login from './Login';
 import Brand from '../common/Brand';
 export default class Home extends Component{
     render(){
