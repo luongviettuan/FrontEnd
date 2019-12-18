@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import {Button} from "reactstrap"
 import { withCookies } from 'react-cookie';
 import MenuBrandSlide from '../util/Menu_Brand_Slide';
 import {CartContext} from '../context/Cart.Context'
@@ -11,9 +12,28 @@ class Header extends Component {
         this.state = {
             name: cookies.get('name') || ''
         };
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+    handleLogout(){
+        const { cookies } = this.props;
+        cookies.remove('token');
+        cookies.remove('user_id')
+        cookies.remove('name');
+        this.setState({
+            name: ''
+        })
+        return <Redirect to='/' />
     }
     render() {
         const {name}= this.state;
+        const styleBtn = {
+            borderRadius: "0",
+            color: "gray",
+            padding: "0px",
+            textTransform: "none",
+            fontWeight: "500",
+            background: "#fff"
+        }
         return (
             <header id="header">
                 <div className="header-top">
@@ -32,7 +52,10 @@ class Header extends Component {
                                     <li className="account">
                                         {
                                             name.length>0 ?
-                                            <Link to="/" >Xin Chào : {name}</Link> :
+                                            <span>
+                                                Xin Chào : {name}
+                                                <Button color="link" style={styleBtn} onClick={this.handleLogout}>_Thoát</Button>
+                                            </span>:
                                             <Link to="/login/" >Tài Khoản</Link> 
                                         }
                                     </li>

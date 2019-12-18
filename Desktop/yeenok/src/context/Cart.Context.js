@@ -21,6 +21,13 @@ export class CartProvider extends Component{
         this.addToVoucher = this.addToVoucher.bind(this);
         this.addToAddress = this.addToAddress.bind(this);
         this.removeFromCart = this.removeFromCart.bind(this);
+        this.clearCart = this.clearCart.bind(this)
+    }
+    clearCart(){
+        localStorage.clear()
+        this.setState({
+            cartItems: Object.entries(localStorage)
+        })
     }
     caculator(cartItems){
         const arr = cartItems.map(item => JSON.parse(item[1]))
@@ -121,7 +128,8 @@ export class CartProvider extends Component{
                 addToCart : this.addToCart,
                 addToVoucher : this.addToVoucher,
                 addToAddress : this.addToAddress,
-                removeFromCart: this.removeFromCart
+                removeFromCart: this.removeFromCart,
+                clearCart: this.clearCart
             }}>
                 {
                     this.props.children

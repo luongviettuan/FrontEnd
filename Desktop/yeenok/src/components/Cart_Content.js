@@ -44,9 +44,11 @@ class CartContent extends Component {
                     total,
                     cartItems
                 }
-            ).then((res)=>{
-                console.log(res.data.code)
-            })
+            ).then((res)=>{})
+            this.props.clearCart()
+            
+            
+            
         }
     }
 
