@@ -61,6 +61,8 @@ module.exports.getProductById = (req, res, next) => {
     })
 }
 module.exports.createInfoProduct = (req, res,next)=>{
+    console.log(req.body);
+    
    const objData = ProductUtil.hashObject(req.body);
    if(objData){
         sql = `INSERT INTO Product (product_name, product_image_url, price, brand_id, category_id, status, description, size, color, overview)`
